@@ -33,7 +33,7 @@
 \begin{document}
 	\pagenumbering{roman}
 
-\title{Analytisk och nummerisk undersökning av modell för oscillerande partiklarupphängda i ideala fjädrar i en spatiell dimension}
+\title{Analytisk och nummerisk undersÃ¶kning av modell fÃ¶r oscillerande partiklarupphÃ¤ngda i ideala fjÃ¤drar i en spatiell dimension}
 	\author{AUTHORS}
 	\date{DATE}
 	\maketitle
@@ -54,23 +54,23 @@
 	\pagestyle{plain}
 	\pagenumbering{arabic}
 \section{Uppgift 1, N=3}
-Ur friläggning av de enskilda partiklarna finner vi att:
+Ur frilÃ¤ggning av de enskilda partiklarna finner vi att:
 
 \begin{equation*}
 m\ddot{q_1} = k(q_2-q_1)-kq_1 \\
 m\ddot{q_2} = k(q_3-q_2)-k(q_2-q_1) \\
 m\ddot{q_3} = k(q_3-q_2)-kq_2
-\end{equation}
+\end{equation*}
 
-Vilket är ekvivalent med:
+Vilket Ã¤r ekvivalent med:
 
 \begin{equation*}
 \ddot{q_1} + \frac{2k}{m}q_1 - \frac{k}{m}q_2 = 0 \\
 \ddot{q_2} + \frac{2k}{m}q_2-\frac{2}{m}q_1 - \frac{k}{m}q_3 = 0 \\
 \ddot{q_3} + \frac{2k}{m}q_3 - \frac{k}{m}q_2=0
-\end{equation}
+\end{equation*}
 
-Vi inför beteckningarna: 
+Vi infÃ¶r beteckningarna: 
 
 \begin{equation*}
 \omega_0=\sqrt{k/m}
@@ -86,15 +86,15 @@ q_1 \\
 q_2 \\
 q_3
 \end{bmatrix}
-\end{equation}
+\end{equation*}
 
-Vårt system av differentialekvationer kan nu skrivas som:
+VÃ¥rt system av differentialekvationer kan nu skrivas som:
 
 \begin{equation*}
 \ddot{Q} = \omega_0^2 KQ
-\end{equation}
+\end{equation*}
 
-Vi gör ansatzen:
+Vi gÃ¶r ansatzen:
 
 \begin{IEEEeqnarray*}{rCl}
 Q & = & A e^{i \omega t} \\
@@ -106,18 +106,18 @@ a_3
 \end{bmatrix}
 \end{IEEEeqnarray*}
 
-Där $a_i, i=1,2,3$ är amplituder för respektive partikel. Vilket ger oss:
+DÃ¤r $a_i, i=1,2,3$ Ã¤r amplituder fÃ¶r respektive partikel. Vilket ger oss:
 
 \begin{equation*}
 \ddot{Q}=-\omega^2 Q = -\omega^2 A e^{i \omega t} \\
-\end{equation}
+\end{equation*}
 
-Och insatt i ekvationssystemet får vi:
+Och insatt i ekvationssystemet fÃ¥r vi:
 
 \begin{equation}
 e^{i \omega t}(-\omega^2 A + \omega_0^2 K A) =0 \\
 <=> KA=\frac{\omega^2}{\omega_0^2} A
 \end{equation}
 
-Detta känns igen som ett egenvärdesproblem.
+Detta kÃ¤nns igen som ett egenvÃ¤rdesproblem.
 \end{document}
