@@ -55,75 +55,6 @@
 	\pagenumbering{arabic}
 	
 	
-\section{Uppgift 1, N=3}
-Ur friläggning av de enskilda partiklarna finner vi att:
-
-\begin{IEEEeqnarray*}{rCl}
-m\ddot{q_1} & = & k(q_2-q_1)-kq_1 \\
-m\ddot{q_2} & = & k(q_3-q_2)-k(q_2-q_1) \\
-m\ddot{q_3} & = & k(q_3-q_2)-kq_2
-\end{IEEEeqnarray*}
-
-Vilket är ekvivalent med:
-
-\begin{IEEEeqnarray*}{rrrrCl}
-\ddot{q_1} &+ \frac{2k}{m}q_1 &- \frac{k}{m}q_2 & & = & 0 \\
-\ddot{q_2} &+ \frac{2k}{m}q_2 &-\frac{2}{m}q_1 &- \frac{k}{m}q_3 &=& 0 \\
-\ddot{q_3} &+ \frac{2k}{m}q_3 &- \frac{k}{m}q_2 & & = & 0
-\end{IEEEeqnarray*}
-
-Vi inför beteckningarna: 
-
-\begin{IEEEeqnarray*}{rCl}
-\omega_0=\sqrt{k/m}
-K=
-\begin{bmatrix}
-2 &-1 &0 \\
- -1 & 2 &-1\\
- 0 &-1 &2
-\end{bmatrix}\\
-Q=
-\begin{bmatrix}
-q_1 \\ 
-q_2 \\
-q_3
-\end{bmatrix}
-\end{IEEEeqnarray*}
-
-Vårt system av differentialekvationer kan nu skrivas som:
-
-\begin{IEEEeqnarray*}{rCl}
-\ddot{Q} = \omega_0^2 KQ
-\end{IEEEeqnarray*}
-
-Vi gör ansatzen:
-
-\begin{IEEEeqnarray*}{rCl}
-Q & = & A e^{i \omega t} \\
-A & = &
-\begin{bmatrix}
-a_1 \\
-a_2 \\
-a_3
-\end{bmatrix}
-\end{IEEEeqnarray*}
-
-Där $a_i, i=1,2,3$ är amplituder för respektive partikel. Vilket ger oss:
-
-\begin{IEEEeqnarray*}{rCl}
-\ddot{Q}=-\omega^2 Q = -\omega^2 A e^{i \omega t} \\
-\end{IEEEeqnarray*}
-
-Och insatt i ekvationssystemet får vi:
-
-\begin{equation}
-e^{i \omega t}(-\omega^2 A + \omega_0^2 K A) =0 \\
-<=> KA=\frac{\omega^2}{\omega_0^2} A
-\end{equation}
-
-Detta känns igen som ett egenvärdesproblem.
-
-
 \section{Problem 1}
 	
 	\setlength{\unitlength}{1mm}
@@ -225,5 +156,156 @@ Detta känns igen som ett egenvärdesproblem.
 		\put()
 		
 	\end{picture}
+Ur friläggning av de enskilda partiklarna finner vi att:
+
+\begin{IEEEeqnarray*}{rCl}
+m\ddot{q_1} & = & k(q_2-q_1)-kq_1 \\
+m\ddot{q_2} & = & k(q_3-q_2)-k(q_2-q_1) \\
+m\ddot{q_3} & = & k(q_3-q_2)-kq_2
+\end{IEEEeqnarray*}
+
+Vilket är ekvivalent med:
+
+\begin{IEEEeqnarray*}{rrrrCl}
+\ddot{q_1} &+ \frac{2k}{m}q_1 &- \frac{k}{m}q_2 & & = & 0 \\
+\ddot{q_2} &+ \frac{2}{m}q_1 &+ \frac{2k}{m}q_2 &- \frac{k}{m}q_3 &=& 0 \\
+\ddot{q_3} & &+  \frac{k}{m}q_2 &\frac{2k}{m}q_3 &- = & 0
+\end{IEEEeqnarray*}
+
+Vi inför beteckningarna: 
+
+\begin{IEEEeqnarray*}{rCl}
+\omega_o &=& \sqrt{k/m}
+K &=&
+\begin{bmatrix}
+2 &-1 &0 \\
+ -1 & 2 &-1\\
+ 0 &-1 &2
+\end{bmatrix}\\
+Q &=&
+\begin{bmatrix}
+q_1 \\ 
+q_2 \\
+q_3
+\end{bmatrix}
+\end{IEEEeqnarray*}
+
+Vårt system av differentialekvationer kan nu skrivas som:
+
+\begin{IEEEeqnarray*}{rCl}
+\ddot{Q} & = &\omega_o^2 KQ
+\end{IEEEeqnarray*}
+
+Vi gör ansatzen:
+
+\begin{IEEEeqnarray*}{rCl}
+Q & = & A e^{i \omega t} \\
+A & = &
+\begin{bmatrix}
+a_1 \\
+a_2 \\
+a_3
+\end{bmatrix}
+\end{IEEEeqnarray*}
+
+Där $a_i, i=1,2,3$ är amplituder för respektive partikel. Vilket ger oss:
+
+\begin{IEEEeqnarray}{rCl}
+\ddot{Q}=-\omega^2 Q = -\omega^2 A e^{i \omega t} \\
+%fixa referens
+\end{IEEEeqnarray}
+
+Och insatt i ekvationssystemet får vi:
+
+\begin{IEEEeqnarray*}{rCl}
+e^{i \omega t}(-\omega^2 A + \omega_o^2 K A)  &=&0 \\
+<=> KA &=& \frac{\omega^2}{\omega_o^2} A
+\end{IEEEeqnarray*}
+
+Detta känns igen som ett egenvärdesproblem. Genom att betrakta den karakteristiska ekvationen:
+\begin{IEEEeqnarray*}{rCl}
+\begin{bmatrix}
+2-\frac{\omega^2}{\omega_o^2} & -1 & 0\\
+-1 & 2-frac{\omega^2}{\omega_o^2} & -1 \\
+0 & -1 & 2-frac{\omega^2}{\omega_o^2}
+\end{bmatrix} &=&0 \\
+<=>frac{\omega^2}{\omega_o^2}^3-6frac{\omega^2}{\omega_o^2}^2+10frac{\omega^2}{\omega_o^2}-4&=&0
+\end{IEEEeqnarray*}{rrCl}
+finner vi att egenvärdena är:
+\begin{IEEEeqnarray*}
+ & frac{\omega_1^2}{\omega_o^2}&=&2\\
+ & frac{\omega_2^2}{\omega_o^2}&=&2+\sqrt{2}\\
+ & frac{\omega_3^2}{\omega_o^2}&=&2-\sqrt{2}
+<=>& \omega_1&=&\sqrt{2} \omega_o
+& \omega_2&=&\sqrt{2+\sqrt{2}} \omega_o
+& \omega_3&=&\sqrt{2-\sqrt{2}} \omega_o
+\end{IEEEeqnarray*}
+
+Genom att betrakta $(K-frac{\omega_i^2}{\omega_o^2})A_i=0$ för $i=1,2,3$, finner vi egenvärdena:
+\begin{IEEEeqnarray*}{rCl}
+A_1&=&
+\begin{bmatrix}
+1 \\ 
+0 \\
+-1
+\end{bmatrix} \\
+A_2&=&
+\begin{bmatrix}
+1 \\
+-\sqrt{2} \\
+1 
+\end{bmatrix} \\
+A_3&=&
+\begin{bmatrix}
+1 \\
+\sqrt{2} \\
+1
+\end{bmatrix}
+\end{IEEEeqnarray*} 
+Vilket kan normaliseras till en ON-bas för $\R^3$:
+\begin{IEEEeqnarray*}{rCl}
+\hat{A_1}&=&\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1 \\ 
+0 \\
+-1
+\end{bmatrix} \\
+\hat{A_2}&=&\frac{1}{2}
+\begin{bmatrix}
+1 \\
+-\sqrt{2} \\
+1 
+\end{bmatrix} \\
+\hat{A_3}&=&\frac{1}{2}
+\begin{bmatrix}
+1 \\
+\sqrt{2} \\
+1
+\end{bmatrix}
+\end{IEEEeqnarray*} 
+%Då vi har 3 distinkta egenvärden vet vi att våra 3 egenvektorer är ortogonala, och då vi har 3 ortogonala vektorer har vi en bas för R^3, varpå godt. amplituder för systemet, uttryckta som vektorer i R^3, kan uttryckas som en linjär kombination av dessa egenvektorer. Detta ges oss en enkel modell över amplitudförändringar över tid för godt. svängingar. (ty matrismultiplikationen blir trivial) //end självförklaring
+Dessa egenvektorer utgör således en ON-bas för lösningsrummet till differensialekvationen. En egensvängning motsvarar att den mittersta är stila medans de två yttre har motriktad svängning. En lösning med kortare periodtid motsvarar att den mellersta partikeln svänger motriktat de övrig med en större amplutid. Den sista lösningen med längst periodtid motsvarar att all partiklarna svänger i samma riktning, den mellarsta återigen med högre amplitud.
+Den allmäna fysikaliska lösningen kan skrivas som en superposition av realdelen av ansatsen. %fixa referens till ansatsen 
+\begin{IEEEeqnarray*}{rCrCl}
+Q(t)&=&\frac{c_1}{\sqrt{2}}\begin{bmatris}1 \\ 0 \\ -1\end{bmatrix} \sin{\sqrt{2} \omega_ot+\Fi_1} 
+&+\frac{c_2}{2}\begin{bmatris}1 \\ -\sqrt{2} \\ 1\end{bmatrix} \sin{\sqrt{2+\sqrt{2}} \omega_ot+\Fi_2} 
+&+\frac{c_2}{2}\begin{bmatris}1 \\ \sqrt{2} \\ 1\end{bmatrix} \sin{\sqrt{2-\sqrt{2}} \omega_ot+\Fi_3} 
+\end{IEEEeqnarray*}
+Vilket på matrisform kan skrivas som:
+\begin{IEEEeqnaray*}{rCl}
+\hat{A}&=&
+\begin{bmatrix}
+\hat{A_1} & \hat{A_2} & \hat{A_3}
+\end{bmatrix} \\
+Q(t)=\hat{A}
+\begin{bmatrix}
+c_1 \sin{\sqrt{2} \omega_o t+ \Fi_1} \\
+c_2 \sin{\sqrt{2+\sqrt{2}} \omega_o t+ \Fi_2} \\
+c_3 \sin{\sqrt{2-\sqrt{2}} \omega_o t+ \Fi_3}
+\end{bmatrix}
+\end{IEEEeqnarray*}
+
+
+
 	
 \end{document}
