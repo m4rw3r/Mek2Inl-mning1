@@ -165,22 +165,22 @@
 
 	Vilket är ekvivalent med:
 
-	\begin{IEEEeqnarray*}{rrrrCl}
-		\ddot{q_1} &+ \frac{2k}{m}q_1 &- \frac{k}{m}q_2 & & = & 0 \\
-		\ddot{q_2} &+ \frac{2}{m}q_1 &+ \frac{2k}{m}q_2 &- \frac{k}{m}q_3 &=& 0 \\
-		\ddot{q_3} & &+  \frac{k}{m}q_2 & \frac{2k}{m}q_3 &- = & 0
+	\begin{IEEEeqnarray*}{rCrCrCrCl}
+		\ddot{q_1} &+& \frac{2k}{m}q_1 &-& \frac{k}{m}q_2 & & & = & 0 \\
+		\ddot{q_2} &-& \frac{2}{m}q_1 &+& \frac{2k}{m}q_2 &-& \frac{k}{m}q_3 &=& 0 \\
+		\ddot{q_3} & & &-&\frac{k}{m}q_2 &+&\frac{2k}{m}q_3 & = & 0
 	\end{IEEEeqnarray*}
 	
 	Vi inför beteckningarna: 
 
-	\begin{IEEEeqnarray*}{rCl}
-		\omega_o & = & \sqrt{k/m} \\
+	\begin{IEEEeqnarray*}{rClCrClCrCl}
+		\omega_o & = & \sqrt{k/m} &\hspace{12pt} &
 		K & = &
 		\begin{bmatrix}
 			2  & -1 &  0 \\
  			-1 & 2  & -1 \\
  			0  & -1 &  2
-		\end{bmatrix} \\
+		\end{bmatrix} &\hspace{12pt}&
 		Q &=&
 		\begin{bmatrix}
 			q_1 \\ 
@@ -197,8 +197,8 @@
 
 	Vi gör ansatzen:
 
-	\begin{IEEEeqnarray*}{rCl}
-		Q(t) & = & A e^{i \omega t} \\
+	\begin{IEEEeqnarray*}{rClCrCl}
+		Q(t) & = & A e^{i \omega t} &\hspace{12pt}&
 		A & = &
 		\begin{bmatrix}
 			a_1 \\
@@ -210,53 +210,50 @@
 	Där $a_i, i = 1,2,3$ är amplituder för respektive partikel. Vilket ger oss:
 
 	\begin{IEEEeqnarray}{rCl}
-		\ddot{Q}=-\omega^2 Q = -\omega^2 A e^{i \omega{} t} \\
+		\ddot{Q}&=&-\omega^2 A e^{i \omega{} t}
 		%fixa referens
 	\end{IEEEeqnarray}
 
 	Och insatt i ekvationssystemet får vi:
 
-	\begin{IEEEeqnarray*}{rCl}
-		e^{i \omega t} -\omega^2 A + e^{i \omega t}\omega^2 K A & = & 0 \\
-		\Leftrightarrow{} KA  & = & \frac{\omega^2}{\omega_o^2} A
+	\begin{IEEEeqnarray*}{rl}
+	&e^{i \omega t} -\omega^2 A + e^{i \omega t}\omega^2 K A=0 \\
+        \Leftrightarrow{}& KA  =\frac{\omega^2}{\omega_o^2} A
 	\end{IEEEeqnarray*}
 
 	Detta känns igen som ett egenvärdesproblem. Genom att betrakta den karakteristiska ekvationen:
-	\begin{IEEEeqnarray*}{rCl}
-		\begin{bmatrix}
+	\begin{IEEEeqnarray*}{rrCl}
+	&	\begin{bmatrix}
 			2-\frac{\omega^2}{\omega_o^2} & -1 & 0\\
 			-1 & 2 - \frac{\omega^2}{\omega_o^2} & -1 \\
 			0 & -1 & 2 - \frac{\omega^2}{\omega_o^2}
 		\end{bmatrix} & = & 0 \\
-		\Leftrightarrow {\frac{\omega^2}{\omega_o^2}}^3 - 6 {\frac{\omega^2}{\omega_o^2}}^2 + 10 \frac{\omega^2}{\omega_o^2} - 4 & = & 0
+		\Leftrightarrow &{\frac{\omega^2}{\omega_o^2}}^3 - 6 {\frac{\omega^2}{\omega_o^2}}^2 + 10 \frac{\omega^2}{\omega_o^2} - 4 & = & 0
 	\end{IEEEeqnarray*}
 
 	finner vi att egenvärdena är:
 
-	\begin{IEEEeqnarray*}{rrCl}
- 		& \frac{\omega_1^2}{\omega_o^2}&=&2\\
- 		& \frac{\omega_2^2}{\omega_o^2}&=&2+\sqrt{2}\\
- 		& \frac{\omega_3^2}{\omega_o^2}&=&2-\sqrt{2} \\
-		\Leftrightarrow & \omega_1 & = & \sqrt{2} \omega_o \\
-		& \omega_2 & = & \Big(\sqrt{2+\sqrt{2}}\Big) \omega_o \\
-		& \omega_3 & = & \Big(\sqrt{2-\sqrt{2}}\Big) \omega_o \\
+	\begin{IEEEeqnarray*}{rCl}
+ 	  \frac{\omega_1^2}{\omega_o^2}=2& & \omega_1 = \sqrt{2} \omega_o \\
+ 	  \frac{\omega_2^2}{\omega_o^2}=2+\sqrt{2} &\hspace{12pt} \Leftrightarrow \hspace{12pt}& \omega_2 = \Big(\sqrt{2+\sqrt{2}}\Big) \omega_o \\
+ 	  \frac{\omega_3^2}{\omega_o^2}=2-\sqrt{2} & & \omega_3 = \Big(\sqrt{2-\sqrt{2}}\Big) \omega_o
 	\end{IEEEeqnarray*}
 
 	Genom att betrakta $(K-\frac{\omega_i^2}{\omega_o^2})A_i=0$ för $i=1,2,3$, finner vi egenvärdena:
 	
-	\begin{IEEEeqnarray*}{rCl}
+	\begin{IEEEeqnarray*}{rClCrClCrCl}
 		A_1&=&
 		\begin{bmatrix}
 			1 \\ 
 			0 \\
 			-1
-		\end{bmatrix} \\
+		\end{bmatrix} &\hspace{12pt}&
 		A_2&=&
 		\begin{bmatrix}
 			1 \\
 			-\sqrt{2} \\
 			1 
-		\end{bmatrix} \\
+		\end{bmatrix} &\hspace{12pt}&
 		A_3&=&
 		\begin{bmatrix}
 			1 \\
@@ -265,21 +262,21 @@
 		\end{bmatrix}
 	\end{IEEEeqnarray*}
 	
-	Vilket kan normaliseras till en ON-bas för $\R^3$:
+	Vilket kan normaliseras till en ON-bas för \R^3:
 
-	\begin{IEEEeqnarray*}{rCl}
+	\begin{IEEEeqnarray*}{rClrClrCl}
 		\hat{A_1} & = & \frac{1}{\sqrt{2}}
 		\begin{bmatrix}
 			1 \\ 
 			0 \\
 			-1
-		\end{bmatrix} \\
+		\end{bmatrix} & \hspace{12pt}
 		\hat{A_2} & = & \frac{1}{2}
 		\begin{bmatrix}
 			1 \\
 			-\sqrt{2} \\
 			1 
-		\end{bmatrix} \\
+		\end{bmatrix} & \hspace{12pt}
 		\hat{A_3} & = & \frac{1}{2}
 		\begin{bmatrix}
 			1 \\
