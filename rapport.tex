@@ -195,9 +195,9 @@
 
 	Vårt system av differentialekvationer kan nu skrivas som:
 
-	\begin{IEEEeqnarray*}{rCl}
-		\ddot{Q} & = & \omega_o^2 KQ
-	\end{IEEEeqnarray*}
+	\begin{equation*}
+		\ddot{Q} + \omega_o^2 KQ = 0
+	\end{equation*}
 
 	Vi gör ansatzen:
 
@@ -220,18 +220,18 @@
 
 	Och insatt i ekvationssystemet får vi:
 
-	\begin{IEEEeqnarray*}{rl}
-	&e^{i \omega t} -\omega^2 A + e^{i \omega t}\omega^2 K A=0 \\
-        \Leftrightarrow{}& KA  =\frac{\omega^2}{\omega_o^2} A
+	\begin{IEEEeqnarray*}{rCl}
+	 e^{i \omega t}(-\omega^2 A + \omega_o^2 K A) & = & 0 \\
+        \Leftrightarrow{} KA & = &\frac{\omega^2}{\omega_o^2} A
 	\end{IEEEeqnarray*}
 
 	Detta känns igen som ett egenvärdesproblem. Genom att betrakta den karakteristiska ekvationen:
 	\begin{IEEEeqnarray*}{rrCl}
-	&	\begin{bmatrix}
+	&	\begin{vmatrix}
 			2-\frac{\omega^2}{\omega_o^2} & -1 & 0\\
 			-1 & 2 - \frac{\omega^2}{\omega_o^2} & -1 \\
 			0 & -1 & 2 - \frac{\omega^2}{\omega_o^2}
-		\end{bmatrix} & = & 0 \\
+		\end{vmatrix} & = & 0 \\
 		\Leftrightarrow &{\frac{\omega^2}{\omega_o^2}}^3 - 6 {\frac{\omega^2}{\omega_o^2}}^2 + 10 \frac{\omega^2}{\omega_o^2} - 4 & = & 0
 	\end{IEEEeqnarray*}
 
@@ -243,7 +243,7 @@
  	  \frac{\omega_3^2}{\omega_o^2}=2-\sqrt{2} & & \omega_3 = \Big(\sqrt{2-\sqrt{2}}\Big) \omega_o
 	\end{IEEEeqnarray*}
 
-	Genom att betrakta $(K-\frac{\omega_i^2}{\omega_o^2})A_i=0$ för $i=1,2,3$, finner vi egenvärdena:
+	Genom att betrakta $(K-\frac{\omega_i^2}{\omega_o^2})A_i=0$ för $i=1,2,3$ finner vi egenvärdena:
 	
 	\begin{IEEEeqnarray*}{rClCrClCrCl}
 		A_1&=&
