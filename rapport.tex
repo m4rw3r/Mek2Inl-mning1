@@ -33,14 +33,14 @@
 \begin{document}
 	\pagenumbering{roman}
 
-\title{Analytisk och nummerisk undersökning av modell för oscillerande partiklarupphängda i ideala fjädrar i en spatiell dimension}
+\title{Analytisk och nummerisk undersökning av modell för oscillerande partiklar upphängda i ideala fjädrar i en spatiell dimension}
 	\author{AUTHORS}
 	\date{}
 	\maketitle{}
 	\thispagestyle{empty}
 
 	\begin{abstract}
-		ABSTRACT
+		Sammanfattning
 	\end{abstract}
 
 \newpage{}
@@ -215,14 +215,14 @@
 
 	\begin{IEEEeqnarray}{rCl}
 		\ddot{Q}&=&-\omega^2 A e^{i \omega{} t}
-		%fixa referens
+		\label{qdprick}
 	\end{IEEEeqnarray}
 
 	Och insatt i ekvationssystemet får vi:
 
-	\begin{IEEEeqnarray*}{rCl}
-	 e^{i \omega t}(-\omega^2 A + \omega_o^2 K A) & = & 0 \\
-        \Leftrightarrow{} KA & = &\frac{\omega^2}{\omega_o^2} A
+	\begin{IEEEeqnarray*}{l}
+	 e^{i \omega t}(-\omega^2 A + \omega_o^2 K A) = 0 \\
+        \Leftrightarrow{} KA  = \frac{\omega^2}{\omega_o^2} A
 	\end{IEEEeqnarray*}
 
 	Detta känns igen som ett egenvärdesproblem. Genom att betrakta den karakteristiska ekvationen:
@@ -237,7 +237,7 @@
 
 	finner vi att egenvärdena är:
 
-	\begin{IEEEeqnarray*}{rCl}
+	\begin{IEEEeqnarray*}{lCl}
  	  \frac{\omega_1^2}{\omega_o^2}=2& & \omega_1 = \sqrt{2} \omega_o \\
  	  \frac{\omega_2^2}{\omega_o^2}=2+\sqrt{2} &\hspace{12pt} \Leftrightarrow \hspace{12pt}& \omega_2 = \Big(\sqrt{2+\sqrt{2}}\Big) \omega_o \\
  	  \frac{\omega_3^2}{\omega_o^2}=2-\sqrt{2} & & \omega_3 = \Big(\sqrt{2-\sqrt{2}}\Big) \omega_o
@@ -295,7 +295,7 @@
 	motriktat de övrig med en större amplutid. Den sista lösningen med längst periodtid motsvarar
 	att all partiklarna svänger i samma riktning, den mellarsta återigen med högre amplitud.
 	
-	Den allmäna fysikaliska lösningen kan skrivas som en superposition av realdelen av ansatsen. %fixa referens till ansatsen 
+	Den allmäna fysikaliska lösningen kan skrivas som en superposition av realdelen av ansatsen (\ref{qdprick}).
 	
 	\begin{IEEEeqnarray*}{rClCl}
 		Q(t) & = & \frac{c_1}{\sqrt{2}}\begin{bmatrix}1 \\ 0 \\ -1\end{bmatrix} \sin(\sqrt{2} \omega_o t + \Phi_1) 
