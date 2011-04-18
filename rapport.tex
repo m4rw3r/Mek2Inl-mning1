@@ -221,8 +221,11 @@
 	Och insatt i ekvationssystemet får vi:
 
 	\begin{IEEEeqnarray*}{l}
-	 e^{i \omega t}(-\omega^2 A + \omega_o^2 K A) = 0 \\
-        \Leftrightarrow{} KA  = \frac{\omega^2}{\omega_o^2} A
+	 	e^{i \omega t}(-\omega^2 A + \omega_o^2 K A) = 0
+		\hspace{6pt}
+		\Leftrightarrow
+		\hspace{6pt}
+		KA  = \frac{\omega^2}{\omega_o^2} A
 	\end{IEEEeqnarray*}
 
 	Detta känns igen som ett egenvärdesproblem. Genom att betrakta den karakteristiska ekvationen:
@@ -318,6 +321,7 @@
 		\end{bmatrix}
 	\end{IEEEeqnarray*}
 
+\newpage
 \section{Problem 2}
 	
 	\setlength{\unitlength}{1mm}
@@ -360,8 +364,134 @@
 	\begin{IEEEeqnarray*}{rCl}
 		m \ddot{q_1} & = & k (q_2 - q_1) \\
 		M \ddot{q_2} & = & k (q_3 - q_2) - k (q_2 - q_1) \\
-		m \ddot{q_3} & = & k (q_3 - q_2)
+		m \ddot{q_3} & = & -k (q_3 - q_2)
 	\end{IEEEeqnarray*}
 	
+	Vilket ger:
+	
+	\begin{IEEEeqnarray*}{rlllCl}
+		\ddot{q_1} &+\frac{k}{m}q_1 & -\frac{k}{m}q_2  &                 &=& 0 \\
+		\ddot{q_2} &-\frac{k}{M}q_1 & +\frac{2k}{M}q_2 & -\frac{k}{M}q_3 &=& 0 \\
+		\ddot{q_3} &                & -\frac{k}{m}q_2  & +\frac{k}{m}q_3 &=& 0 \\
+	\end{IEEEeqnarray*}
+	
+	Inför:
+	
+	\begin{IEEEeqnarray*}{C}
+		\omega_o = \sqrt{\frac{k}{m}}
+		\hspace{12pt}
+		\Delta_M = \frac{m}{M}
+		\hspace{12pt}
+		K = \begin{bmatrix}
+			1 & -1 & 0 \\
+			-\Delta_M & 2\Delta_M & -\Delta_M \\
+			0 & -1 & 1
+		\end{bmatrix}
+		\hspace{12pt}
+		Q = \begin{bmatrix}
+			q_1 \\ 
+			q_2 \\
+			q_3
+		\end{bmatrix} \\
+		\vspace{6pt}\\
+		\Rightarrow
+		\ddot{Q}+\omega_o^2KQ=0
+	\end{IEEEeqnarray*}
+	
+	Ansätt:
+	
+	\begin{IEEEeqnarray*}{l}
+		Q=Ae^{i \omega t}
+		\hspace{6pt}
+		\Rightarrow
+		\hspace{6pt}
+		\ddot{Q}=-\omega^2Ae^{i \omega t}
+	\end{IEEEeqnarray*}
+	
+	\begin{IEEEeqnarray*}{C}
+		e^{i \omega t}(\omega_o^2KA-\omega^2A)=0
+		\hspace{6pt}
+		\Leftrightarrow
+		\hspace{6pt}
+		KA = \frac{\omega^2}{\omega_o^2}A
+	\end{IEEEeqnarray*}
+	
+	Egenvärdesproblem med karakteristiskt polynom:
+	
+	\begin{IEEEeqnarray*}{C}
+		(2 \Delta_M + 2) \frac{\omega^2}{\omega_o^2}^2- (2 \Delta_M + 1) \frac{\omega^2}{\omega_o^2} - \frac{\omega^2}{\omega_o^2}^3 = 0 \\
+		\Rightarrow
+		\begin{cases}
+			\frac{\omega_1^2}{\omega_o^2} = 0 \\
+			\frac{\omega_2^2}{\omega_o^2} = 1 \\
+			\frac{\omega_3^2}{\omega_o^2} = 1 + 2 \Delta_M
+		\end{cases}
+		\Leftrightarrow
+	\end{IEEEeqnarray*}
+	
+	Detta ger egenvektorerna:
+	
+	\begin{IEEEeqnarray*}{rClCrClCrCl}
+		A_1&=&
+		\begin{bmatrix}
+			1 \\ 
+			1 \\
+			1
+		\end{bmatrix} &\hspace{12pt}&
+		A_2&=&
+		\begin{bmatrix}
+			1 \\
+			0 \\
+			-1 
+		\end{bmatrix} &\hspace{12pt}&
+		A_3&=&
+		\begin{bmatrix}
+			1 \\
+			-2 \Delta_M \\
+			1
+		\end{bmatrix}
+	\end{IEEEeqnarray*}
+	
+	Vektor $A_1$ är lite speciell eftersom den beskriver en rörelse där alla tre partiklarna rör
+	sig åt samma håll med samma frekvens och amplitud, dvs. en ren translation. Denna lösning är
+	helt normal, vilket inses från friläggningen där det inte finns någonting som hindrar enheten
+	som de tre partiklarna utgör att röra sig fritt i rummet.
+	
+	Detta ger lösningen, med $A_i$ konverterad till ON-bas:
+	
+	\begin{IEEEeqnarray*}{rCl}
+		Q(t) &=& \frac{c_1}{\sqrt{3}}
+			\begin{bmatrix}
+				1\\
+				1\\
+				1
+			\end{bmatrix}
+			+ \frac{c_2}{\sqrt{2}}\begin{bmatrix}
+				1\\
+				0\\
+				-1
+			\end{bmatrix}\sin(\omega_o t + \Phi_2) \\
+			&+& \frac{c_3}{\sqrt{2 + 4 \Delta_M^2}}\begin{bmatrix}
+				1 \\
+				-2 \Delta_M \\
+				1
+			\end{bmatrix}\sin\big(\sqrt{1+2 \Delta_M}\omega_o t + \Phi_3 \big)
+	\end{IEEEeqnarray*}
+	
+	\begin{IEEEeqnarray*}{c}
+		\hat{A} = \begin{bmatrix}
+			\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}}  & \frac{1}{\sqrt{2 + 4 \Delta_M^2}} \\
+			\frac{1}{\sqrt{3}} & 0                   & \frac{-2 \Delta_M}{\sqrt{2 + 4 \Delta_M^2}} \\
+			\frac{1}{\sqrt{3}} & \frac{-1}{\sqrt{2}} & \frac{1}{\sqrt{2 + 4 \Delta_M^2}}
+		\end{bmatrix}
+		\hspace{14pt}
+		\Rightarrow
+		\hspace{14pt}
+		Q(t) = \hat{A}\begin{bmatrix}
+			c_1 \\
+			c_2 \sin(\omega_o t + \Phi_2) \\
+			c_3 \sin\big(\sqrt{1+2 \Delta_M}\omega_o t + \Phi_3 \big)
+		\end{bmatrix}
+	\end{IEEEeqnarray*}
 	
 \end{document}
