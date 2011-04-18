@@ -34,8 +34,8 @@
 	\pagenumbering{roman}
 
 \title{Analytisk och nummerisk undersökning av modell för oscillerande partiklar upphängda i ideala fjädrar i en spatiell dimension}
-	\author{AUTHORS}
-	\date{}
+	\author{Stefan Buller och Martin Wernstål}
+	\date{DATE}
 	\maketitle{}
 	\thispagestyle{empty}
 
@@ -164,7 +164,7 @@
 	\begin{IEEEeqnarray*}{rCl}
 		m \ddot{q_1} & = & k (q_2 - q_1) - kq_1 \\
 		m \ddot{q_2} & = & k (q_3 - q_2) - k (q_2 - q_1) \\
-		m \ddot{q_3} & = & k (q_3 - q_2) - kq_2
+		m \ddot{q_3} & = & k (q_3 - q_2) - kq_3
 	\end{IEEEeqnarray*}
 
 	Vilket är ekvivalent med:
@@ -318,7 +318,50 @@
 		\end{bmatrix}
 	\end{IEEEeqnarray*}
 
+\section{Problem 2}
+	
+	\setlength{\unitlength}{1mm}
+	\begin{picture} (120, 40)
+		\put(25, 20){\circle{20}}
+		\put(57, 20){\circle{20}}
+		\put(89, 20){\circle{20}}
+		
+		\put(32, 20){\vector(1,0){8}}
+		
+		\put(50, 20){\vector(-1,0){8}}
+		
+		\put(64, 20){\vector(1,0){8}}
+		
+		\put(82, 20){\vector(-1,0){8}}
+		
+		\put(23, 19){$m$}
+		\put(55, 19){$M$}
+		\put(87, 19){$m$}
+		
+		\put(32.5, 22){$k(q_2-q_1)$}
+		\put(64.5, 22){$k(q_3-q_2)$}
+		
+		\put(25, 30){\line(0,1){2}}
+		\put(57, 30){\line(0,1){2}}
+		\put(89, 30){\line(0,1){2}}
+		
+		\put(25, 31){\vector(1,0){8}}
+		\put(57, 31){\vector(1,0){8}}
+		\put(89, 31){\vector(1,0){8}}
+		
+		\put(27, 33){$q_1$}
+		\put(59, 33){$q_2$}
+		\put(91, 33){$q_3$}
+		
+	\end{picture}
 
+	Ur friläggning av de enskilda partiklarna finner vi att:
 
+	\begin{IEEEeqnarray*}{rCl}
+		m \ddot{q_1} & = & k (q_2 - q_1) \\
+		M \ddot{q_2} & = & k (q_3 - q_2) - k (q_2 - q_1) \\
+		m \ddot{q_3} & = & k (q_3 - q_2)
+	\end{IEEEeqnarray*}
+	
 	
 \end{document}
