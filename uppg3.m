@@ -1,45 +1,64 @@
 function uppg3a()
+    figure(2)
+    clf
 	figure(1)
 	clf
 	hold on
 	
 	% particles for first calculation
-	s = 1;
+	s = 20;
 	% particles for last calculation
-	N = 50;
-	
+	N = 24;
+    %number of eigen oscillations plotted
+	num_plotted=6;
+    
 	for i=s:N
 		[t, y] = calcStandingWaves(i);
-		
+        		
+                
 		% stretch all to the same length
 		t = t * (N + 1)/(i + 1);
 		
 		% normalize maxumum amplitude for lowest frequency, so they will be easy to compare
-		middle = y(1:(i+2), floor((i+2)/2))
+		middle = y(1:(i+2), floor((i+2)/2));
 		y = (y / max(middle)) * 0.9;
 		
 		% offset the waveforms, so they won't interfere
 		y = y * 0.5 + i; 
 		% 0.5 becuse we only want them going +-0.5, to allow proper y-axis numbering
-		
-		plot(t, y);
+        
+        % ensure that we dont try to plot more eigen oscillation than we have
+		to_plot=min(i,num_plotted);
+        % plot to_plot first eigenoscillation
+		plot(t(:,1:to_plot), y(:,1:to_plot));
 	end
 	
 	hold off
 	figure(2)
-	tau = linspace(1, 4*pi, 1000);
-	
-	[t, y] = calcPositions(tau, 3, 2);
-	plot(t, y);
+    hold on
+	tau = linspace(0, 1, 1000);
+    %number of particles gives number of eigen oscillations to plot
+    num_particles=24;
+    %first eigen oscillation we want to plot
+    f=1
+    %last eigen oscillation we want to plot
+    l=num_plotted
+    %plots eigen oscillations
+	for i=f:l
+    [t, y] = calcFrequencies(num_particles, i);
+	plot(t,i+0.45*y);
+    % +i to allow proper y-axis numbering
+    % 0.45 to comfine plot to its number
+   end
 
 function [t, y] = calcStandingWaves(num_particles)
 	A = triDiag(num_particles);
 	
-	[eigvec, eigval] = eig(A);
+	[eigvec, ~] = eig(A);
 	
 	% create a list of arrays whose positions correspond to a node in the oscillations
 	% 0 and num_particles+1 are endpoints
-	t = 0:num_particles + 1;
+	t = 0:num_particles+1;
 	% repeat for num_particles so we have them correspond to the number of eigenvectors
 	% and transpose to make them ready for plot
 	t = repmat(t, num_particles, 1)';
@@ -54,6 +73,8 @@ function [t, y] = calcStandingWaves(num_particles)
 	
 
 function [t, y] = calcPositions(tau, num_particles, vector_index)
+%plots the postions of individual particals over time for a specific
+%eigen oscillation given by vector_index.
 	assert(vector_index > 0, 'vector_index must be greater than zero');
 	assert(vector_index <= num_particles, 'vector_index > num_particles, vector_index refers to a non-existant eigenvector');
 	num_times = length(tau);
@@ -66,9 +87,9 @@ function [t, y] = calcPositions(tau, num_particles, vector_index)
 	
 	%funktion som uttrycker positionen för massorna som avstånd m.a.p.
 	%vänster
-	%med tid uttryck num_particles periodtid för omega0
+	%med tid uttryck num_particles 2pi/omega0
 	%längdenhet l, l=L/(N+1) där N är antal
-	%partiklar (X0(1) blir således 1, X0(2) 2, osv
+	%partiklar (X0(1) blir således 1, X0(2) 2, osv)
 	
 	% omega^2/omega_o^2 = eigval => omega/omega_o = sqrt(egival)
 	eigfreqs = sqrt(eigval);
@@ -84,11 +105,12 @@ function [t, y] = calcPositions(tau, num_particles, vector_index)
 	F   = repmat(F, 1, num_times);
 	X0  = repmat((1:num_particles)', 1, num_times);
 	
-	X=@(t)(X0 + eigvec * (sin(t .* F)));
+	X=@(t)(X0 + eigvec * (sin(2*pi*t .* F)));
 	
 	t = tau';
 	y = X(tau)';
-
+   
+    
 function [matrix] = triDiag(side_length)
 	%Generera den tridiagonala matrisen:
 	n = -ones(side_length - 1, 1);
@@ -97,3 +119,15 @@ function [matrix] = triDiag(side_length)
 	n = 2 * ones(side_length, 1);
 	A = diag(n);
 	matrix = A + B + C;
+    
+
+function [t,y] = calcFrequencies(num_particles,vector_index)
+    K=triDiag(num_particles);
+    [P D]=eig(K);
+    freq=sqrt(D(vector_index,vector_index))*2*pi;
+    %2*pi to plot in unit t=omega_o/2*pi
+    t=linspace(0,10);
+  
+    y=sin(freq.*t);
+        
+    
