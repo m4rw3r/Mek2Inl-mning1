@@ -13,8 +13,8 @@ function uppg3a()
 	num_plotted=6;
     
     %set titles and labels for figure 1
-    title([num2str(num_plotted), ' första egensväningarna som stående vågor för ',num2str(s),' till ',num2str(N), ' partiklar']);
-    xlabel('Avstånd från vänsterväggen');
+    title([num2str(num_plotted), ' f\"{o}rsta egensv\"{a}ningarna som st\aa{}ende v\aa{}gor f\"{o}r ',num2str(s),' till ',num2str(N), ' partiklar'], 'interpreter','latex');
+    xlabel('Avst\aa{}nd fr\aa{}n v\"{a}nsterv\"{a}ggen', 'interpreter', 'latex');
     ylabel('Olika antal partiklar samt deras amplituder');
     
 	for i=s:N
@@ -49,9 +49,9 @@ function uppg3a()
     l=num_plotted;
     
     %sets labels and title
-    xlabel('tid, 2*pi/omega_o');
-    ylabel('index för egenfrekvens samt normaliserad amplitud');
-    title(['egenfrekvenser ', num2str(f), ' till ', num2str(l) ,' för antal partiklar ', num2str(s), ' till ', num2str(N), ' i olika färger']);
+    xlabel('tid, $\frac{2\pi}{\omega_o}$', 'interpreter','latex');
+    ylabel('index f\"{o}r egenfrekvens samt normaliserad amplitud' ,'interpreter','latex');
+    title(['egenfrekvenser ', num2str(f), ' till ', num2str(l) ,' f\"{o}r antal partiklar ', num2str(s), ' till ', num2str(N), ' i olika f\"{a}rger'], 'interpreter','latex');
     
     %to plot differenet numbers of particles with different colors.
     colors=['b','r','g','k','c','y','m'];
