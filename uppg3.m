@@ -12,6 +12,11 @@ function uppg3a()
     %number of eigen oscillations plotted
 	num_plotted=6;
     
+    %set titles and labels for figure 1
+    title([num2str(num_plotted), ' första egensväningarna som stående vågor för ',num2str(s),' till ',num2str(N), ' partiklar']);
+    xlabel('Avstånd från vänsterväggen');
+    ylabel('Olika antal partiklar samt deras amplituder');
+    
 	for i=s:N
 		[t, y] = calcStandingWaves(i);
         		
@@ -35,21 +40,33 @@ function uppg3a()
 	
 	hold off
 	figure(2)
-    hold on
-	tau = linspace(0, 1, 1000);
-    %number of particles gives number of eigen oscillations to plot
-    num_particles=24;
+ 
+    hold on;
+   
     %first eigen oscillation we want to plot
-    f=1
+    f=1;
     %last eigen oscillation we want to plot
-    l=num_plotted
+    l=num_plotted;
+    
+    %sets labels and title
+    xlabel('tid, 2*pi/omega_o');
+    ylabel('index för egenfrekvens samt normaliserad amplitud');
+    title(['egenfrekvenser ', num2str(f), ' till ', num2str(l) ,' för antal partiklar ', num2str(s), ' till ', num2str(N), ' i olika färger']);
+    
+    %to plot differenet numbers of particles with different colors.
+    colors=['b','r','g','k','c','y','m'];
+    
     %plots eigen oscillations
-	for i=f:l
-    [t, y] = calcFrequencies(num_particles, i);
-	plot(t,i+0.45*y);
-    % +i to allow proper y-axis numbering
-    % 0.45 to comfine plot to its number
-   end
+    for num_particles=s:N
+        %to get index for color to use
+        colorindex=mod(num_particles-s+1,length(colors));
+        for i=f:l
+        [t, y] = calcFrequencies(num_particles, i);
+    	plot(t,i+0.45*y,colors(colorindex));
+         % +i to allow proper y-axis numbering
+         % 0.45 to comfine plot to its number
+        end
+    end
 
 function [t, y] = calcStandingWaves(num_particles)
 	A = triDiag(num_particles);
