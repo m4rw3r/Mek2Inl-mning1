@@ -529,22 +529,39 @@
 		För att ta ställning till hur bra approximationen är betraktar vi det relativa felet
 		$|\frac{E_2}{E_1}-\frac{\omega_3}{\omega_2}|/|\frac{E_2}{E_1}| = 0.19993$,
 		vilket motsvarar en relativt god approximation i någon menning.
-\section{Uppgift 3}
-\subsection{Deluppgift a}
-Inför samma beteckningar som i uppgift 1. Vi inser lätt att egenvärdesproblemet kan uttryckas som:
-\begin{IEEEeqnarray*}{rCl}
-KA&=&\frac{\omega}{\omega_o}A
-\end{IEEEeqnarray*}
-Där $K$ inses vara den nxn tridiagonala matrisen med 2 på diagonalen och -1 vid sidan av diagonalerna, ty det avståndet $q_i$ som partikel i flytas bidrar både till att öka kraften på partikeln från fjädern i negativ riktning samt minska kraften i från fjädern i positiv riktning, varpå vid får dubbelt bidrag från $q_i$ och motriktade enkla bidrag från $q_{i-1}$ respektive $q_{i+1}$ från intilligande parkiklar. \\
-Låt $u_i, i=1,...,n$ vara de ortonormala egenvektorerna till K och $\lambda_i, i=1,...,n$ de motsvarande egenvärdena. Detta ger oss enligt ovan egenfrekvenserna:
-$\omega_i=\sqrt{\lambda_i} \omega_o. i=1,...,n$. Med den allmäna fysikaliska lösningen:
-\begin{IEEEeqnarray*}{rCl}
- Q(t) &=&\sum c_i u_i \sin(\omega_i t+ \Phi_i)
-\end{IEEEeqnarray*}
-enligt samma beräkningar och resonemang som i uppgift 1.
-\subsection{Deluppgift b}
-För att illustrera egenfrekvenserna plottar vi de olika egensvängingarna över tid. %referens till bild
-För att presentera egensvängingarna som stående vågor så betraktar vi för de olika egensvängingarna partiklarnas amplituder som fås ur egensvängingens egenvektor.  %referens till bild
 
-%bilder ska fixas, 10 till 20 partiklar verkar lämpligt, över 20 lär vara för svårtyt.
+\section{Uppgift 3}
+	\subsection{Deluppgift a}
+		
+		Inför samma beteckningar som i uppgift 1. Vi inser lätt att egenvärdesproblemet kan uttryckas som:
+		
+		\begin{IEEEeqnarray*}{rCl}
+			KA & = & \frac{\omega^2}{\omega_o^2} A
+		\end{IEEEeqnarray*}
+		
+		Där $K$ inses vara den $n$x$n$ tridiagonala matrisen med 2 på diagonalen och -1 på
+		båda sidorna av diagonalen, ty det avstånd $q_i$ som partikel $i\in\{x: 1\le x \le n\}$ flytas bidrar både
+		till att öka kraften på partikeln från fjädern i negativ riktning samt minska kraften
+		ifrån fjädern i positiv riktning, varpå vi får dubbelt bidrag från $q_i$ och
+		enkla bidrag motriktade $q_i$ från intilligande partiklar ($q_{i-1}$, $q_{i+1}$).
+		
+		Låt $u_i$ vara de ortonormala egenvektorerna till $K$ och $\lambda_i$
+		de motsvarande egenvärdena för $i=1,\dots,n$.
+		
+		Detta ger oss enligt ovan egenfrekvenserna $\omega_i=\sqrt{\lambda_i} \omega_o$,
+		med den allmäna fysikaliska lösningen:
+		\begin{IEEEeqnarray*}{rCl}
+			Q(t) &=&\sum c_i u_i \sin(\omega_i t+ \Phi_i)
+		\end{IEEEeqnarray*}
+		
+		enligt samma beräkningar och resonemang som i uppgift 1.
+		
+	\subsection{Deluppgift b}
+	
+		För att presentera egensvängingarna som stående vågor så betraktar vi för de olika
+		egensvängingarna partiklarnas amplituder som fås ur egensvängingens egenvektor.
+		%referens till bild
+		
+		%bilder ska fixas, 10 till 20 partiklar verkar lämpligt, över 20 lär vara för svårtyt.
+		
 \end{document}
