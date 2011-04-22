@@ -39,8 +39,13 @@ function uppg3a()
         % sets label for each subplot
         hold on
         ylabel([num2str(i), ' par.']);
+        % makes every x-tick visible
+        set(gca,'XTick',1:N)
+
 		plot(t(:,1:to_plot), y(:,1:to_plot),'-*');
-	end
+    end
+    % sets common xlabel
+    xlabel('Partikel index')
 	
 	hold off
 	figure(2)
@@ -70,10 +75,14 @@ function uppg3a()
         % to get index for color to use
         colorindex=mod(i-l,length(colors))+1;
         
+        % sets ticks 
+        set(gca,'XTick',0:10)
         [t, y] = calcFrequencies(num_particles, i);
         plot(t,y,colors(colorindex));
         end
     end
+    % sets common xlabel
+     xlabel('$\frac{2\pi}{\omega_o}$', 'interpreter','latex');
 
 function [t, y] = calcStandingWaves(num_particles)
 	A = triDiag(num_particles);
