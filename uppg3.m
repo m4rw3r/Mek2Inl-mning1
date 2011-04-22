@@ -3,7 +3,6 @@ function uppg3a()
     clf
 	figure(1)
 	clf
-	hold on
 	
 	% particles for first calculation
 	s = 20;
@@ -21,21 +20,26 @@ function uppg3a()
 		[t, y] = calcStandingWaves(i);
         		
                 
-		% stretch all to the same length
-		t = t * (N + 1)/(i + 1);
+% stretch all to the same length (not used)
+		%t = t * (N + 1)/(i + 1);
 		
 		% normalize maxumum amplitude for lowest frequency, so they will be easy to compare
 		middle = y(1:(i+2), floor((i+2)/2));
 		y = (y / max(middle)) * 0.9;
 		
-		% offset the waveforms, so they won't interfere
-		y = y * 0.5 + i; 
+		% offset the waveforms, so they won't interfere (not used)
+		%y = y * 0.5 + i; 
 		% 0.5 becuse we only want them going +-0.5, to allow proper y-axis numbering
         
         % ensure that we dont try to plot more eigen oscillation than we have
 		to_plot=min(i,num_plotted);
         % plot to_plot first eigenoscillation
-		plot(t(:,1:to_plot), y(:,1:to_plot));
+        % plot in different subplot for different number of particles
+        subplot(N-s+1,1,i+1-s)
+        % sets label for each subplot
+        hold on
+        ylabel([num2str(i), ' par.']);
+		plot(t(:,1:to_plot), y(:,1:to_plot),'-*');
 	end
 	
 	hold off
@@ -48,23 +52,26 @@ function uppg3a()
     %last eigen oscillation we want to plot
     l=num_plotted;
     
-    %sets labels and title
+    % sets labels and title
     xlabel('tid, $\frac{2\pi}{\omega_o}$', 'interpreter','latex');
     ylabel('index f\"{o}r egenfrekvens samt normaliserad amplitud' ,'interpreter','latex');
     title(['egenfrekvenser ', num2str(f), ' till ', num2str(l) ,' f\"{o}r antal partiklar ', num2str(s), ' till ', num2str(N), ' i olika f\"{a}rger'], 'interpreter','latex');
     
-    %to plot differenet numbers of particles with different colors.
+    % to plot differenet frequencies with different colors.
     colors=['b','r','g','k','c','y','m'];
     
-    %plots eigen oscillations
+    % plots eigen oscillations
     for num_particles=s:N
-        %to get index for color to use
-        colorindex=mod(num_particles-s+1,length(colors));
+        % to plot different numbers of particles in different subplots
+        subplot(N-s+1,1,num_particles+1-s)
+        ylabel([num2str(num_particles), ' par.']);
+        hold on
         for i=f:l
+        % to get index for color to use
+        colorindex=mod(i-l,length(colors))+1;
+        
         [t, y] = calcFrequencies(num_particles, i);
-    	plot(t,i+0.45*y,colors(colorindex));
-         % +i to allow proper y-axis numbering
-         % 0.45 to comfine plot to its number
+        plot(t,y,colors(colorindex));
         end
     end
 
