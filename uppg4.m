@@ -7,6 +7,7 @@ noll=zeros(100,1);
 v=zeros(100,1);
 %ger mitterta partiklarna en hastighet vid t=0
 v(45:55,1)=ones(11,1);
+v=0.1*v
 
 %skriver högerleden som en konstanter
 a=A\noll;
@@ -29,14 +30,14 @@ lambda=D*ones(100,1);
 k=sqrt(lambda); %*omega0
 c=k./b;
 C=sqrt(c.^2+a.^2);
-fi=asin(a./C); %blir 0 alltid, Aa=0 saknar trivial lösning? även ±n*pi? lurigt
+fi=asin(a./C); %blir 0 alltid, ty Aa=0 saknar trivial lösning, enl. IMT; dock: ±n*pi?
+%ger förenklad lösning: C=c=k./b=sqrt(lambda)./(A\v)
 result = @(t) [A * (C .* sin(sqrt(lambda).*t + fi))];
-bla=A * (C .* sin(sqrt(lambda) + fi))
 
 t=linspace(0,10); %kommer behöva ändras för andra storlekar på A, 100 element just nu
 tplot=repmat(t,100,1); %repmat för dimension
-plot(tplot,result(t')); %transponat för behöver kolonn
-
+plot(tplot,result(t')); %t transponat för behöver kolonn
+%plotten ska tolkas hur? ser konstigt ut?
 function [matrix] = triDiag(side_length)
 	%Generera den tridiagonala matrisen:
 	n = -ones(side_length - 1, 1);
