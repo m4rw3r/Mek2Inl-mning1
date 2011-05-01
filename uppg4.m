@@ -1,4 +1,5 @@
 function apa()
+clf
 	%generera tridiagonala matrisen
 	A = triDiag(100);
 	
@@ -33,7 +34,7 @@ function apa()
 	solution = P \ rhs;
 	
 	a = solution(:, 1);
-	b = solution(:, 2);
+	b = solution(:, 2)
 	
 	%vi låter omega0 vara tidsenhet, (fås hastighet i enhet meter*omega0)
 	k = sqrt(lambda); %*omega0
@@ -41,24 +42,37 @@ function apa()
 	%C = sqrt(c.^2+a.^2);
 	fi = 0;%fi = asin(a./C); %blir 0 alltid, ty Aa=0 saknar trivial lösning, enl. IMT; dock: ±n*pi
 	
-	%ger förenklad lösning: C=c=k./b=sqrt(lambda)./(A\v)
 	result = @(t) [P * (C .* sin(sqrt(lambda) .* t + fi))];
 	
-	time  = 150;
+	time  = 200;
 	stime = 0;
 	
-	num_steps = 200;
+	num_steps = time;
 	time_step = time / num_steps;
-	
+   
 	for t=0:num_steps-1
 		data(1:100, t+1) = result(t*time_step + stime);
 		
-		h = plot(linspace(0, 100), result(t*time_step + stime));
-		ylim([-1 1]);
-		saveas(h, strcat('plot', sprintf('%d', t), '.png'));
-	end
-	
-	plot(repmat(linspace(stime, stime+time, num_steps), 100, 1)', data)
+		%h=plot(linspace(0, 100),result(t*time_step + stime));
+		%ylim([-1 1]);
+        
+		%saveas(h, strcat('plot', sprintf('%d', t), '.png'));
+       % pause(0.005);
+    end
+    
+    %plotta 3d-plot med tiden som y axel vid diskreta tidpunkter
+    hold on
+    xlabel(['Partikel index']);
+    ylabel(['$\frac{1}{\omega_o}$'], 'interpreter','latex');
+    h_ylabel = get(gca,'YLabel');
+set(h_ylabel,'FontSize',20); 
+    zlabel(['Amplitud']);
+    for t=0:time/100:time
+        ett=ones(1,100);
+        plot3(linspace(0, 100),t*ett,result(t*time_step + stime));
+        %zlim([-1 1]);
+    end
+	%plot(repmat(linspace(stime, stime+time, num_steps), 100, 1)', data)
 	
 	%t = linspace(0,10); %kommer behöva ändras för andra storlekar på A, 100 element just nu
 	%tplot = repmat(t,100,1); %repmat för dimension
