@@ -4,3 +4,6 @@
 *.toc
 *.aux
 *.pdf
+*.dvi
+*.ps
+.DS_Store
