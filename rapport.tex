@@ -4,7 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[swedish]{babel}
 \usepackage{amsmath}
-\usepackage{amsfont}
+\usepackage{amsfonts}
 \usepackage{ae}
 \usepackage{units}
 \usepackage{icomma}
@@ -590,26 +590,60 @@
 			%'b','r','g','k','c','y','m'
 			\label{egenf}
 		\end{figure}
+		
+		\clearpage
+		
 \section{Uppgift 4}
-\setcounter{equation}{0}
-\subsection{Deluppgift a}
-Låt $\hat{A}$ vara matrisen med de normerade egenvektorerna till den tridiagonala matrisen $K$, låt $\mathbf{\lambda}$ vara vektorn med motsvarande egenvärden. $\omega_o=k/m$ där $k$ är fjäderkonstanten och $m$ är massan hos en partikel. Enligt tidigare uppgifter kan då partiklarnas avvikelser från jämntviktsläget vid tiden t skrivas som: $Q(t)=A[\mathbf{C}\odot \sin(\sqrt{\mathbf{\lambda}} \omega_o t+\mathbf{\Phi})]$, där $\mathbf{C}$ och $\mathbf{\Phi}$ är vektorer med konstanter som ges av begynnelsevilkor. $\odot$ syftar på elementvis multiplikation.\\
-Med begynnelsevilkoren: 
-\begin{IEEEeqnarray*}{C}
-Q(0)=\mathbf{0}\\
-\dot{Q}(0)=\mathbf{v}
-\end{IEEEeqnarray*}
-Där $\mathbf{v}$ är en vektor för vilkoret att de mittersta $10\%$ av partiklarna ges en liten begynnelsehastighet, så får vi ekvationssystemet:
-\begin{IEEEeqnarray}{rCl}
-A\mathbf{x} &=& \mathbf{0}\\
-\mathbf{x} &=& \mathbf{C}\odot\sin(\mathbf{\Phi})\\
-A\dot{\mathbf{x}}&=&\mathbf{v}\\
-\dot{\mathbf{x}} &=& \mathbf{C}\odot\sqrt{\mathbf{\lambda}}\omega_0 \odot\cos(\mathbf{\Phi})
-\end{IEEEeqnarray}
-Då A:s kolonner är ortonormerade egenvektorer till en symmetrisk matris följer att $A\mathbf{x}=\matbhf{0}$ endast har trivial lösning, alltså fås ur (1) och (2) att antingen $\mathbf{C}=\mathbf{0}$ eller $\sin(\mathbf{\Phi})=\mathbf{0}$. $\mathbf{C}=\mathbf{0}$ ger ingen lösning för (3) och (4), varpå vi får att $\sin(\mathbf{\Phi})=\mathbf{0}$, vilket ger att $\mathbf{\Phi}=n\pi, n\in \mathbb{N}^*$. (3) och (4) ger oss då att $\mathbf{C}=\pm \dot{\mathbf{x}}\oslash\sqrt{\mathbf{\lambda}}*\omega_o$, där $\oslash$ är elementvis division. \\
-\begin{figure}
-\hspace{-1.5cm}\includegraphics[width=1.2\textwidth]{oscillations-over-time.eps}
-\caption{Amplitud för avvikelse hos respektive partiklar över tid, för 100 partiklar och en begynnelsehastighet $0.1 le*\omega_o$ för de mittersta 10 procenten av partiklarna. Amplituden är normaliserad så att 1 är den maximal amplitud som uppnås.}
-\label{oscot}
-\end{figure}
+	
+	\setcounter{equation}{0}
+	
+	\subsection{Deluppgift a}
+		
+		Låt $\hat{A}$ vara matrisen med de normerade egenvektorerna till den tridiagonala
+		matrisen $K$, låt $\boldsymbol{\lambda}$ vara vektorn med motsvarande egenvärden samt att
+		$\omega_o = k / m$ där $k$ är fjäderkonstanten och $m$ är massan hos en partikel.
+		Enligt tidigare beräkningar kan då partiklarnas avvikelser från jämntviktsläget vid
+		tiden t skrivas som:
+		
+		\begin{equation*}
+			Q(t) = A \left[ \mathbf{C} \odot \sin(\omega_o t \sqrt{\boldsymbol{\lambda}} + \mathbf{\Phi} \right]
+		\end{equation*}
+		
+		där $\mathbf{C}$ och $\mathbf{\Phi}$ är vektorer med konstanter som ges av begynnelsevilkor,
+		$\odot$ syftar på elementvis multiplikation.
+		
+		Med begynnelsevilkoren: 
+		
+		\begin{IEEEeqnarray*}{C}
+			Q(0)=\mathbf{0}\\
+			\dot{Q}(0)=\mathbf{v}
+		\end{IEEEeqnarray*}
+		
+		Där $\mathbf{v}$ är en vektor för vilkoret att de mittersta $10\%$ av partiklarna ges en liten
+		begynnelsehastighet, så får vi ekvationssystemet:
+		
+		\begin{IEEEeqnarray}{rCl}
+			A\mathbf{x}       & = & \mathbf{0}\\
+			\mathbf{x}        & = & \mathbf{C} \odot \sin(\mathbf{\Phi})\\
+			A\dot{\mathbf{x}} & = & \mathbf{v}\\
+			\dot{\mathbf{x}}  & = & \omega_0 \mathbf{C} \odot \sqrt{\boldsymbol{\lambda}} \odot \cos(\mathbf{\Phi})
+		\end{IEEEeqnarray}
+		
+		Då A:s kolonner är ortonormerade egenvektorer till en symmetrisk matris följer att
+		$A \mathbf{x} = \mathbf{0}$ endast har trivial lösning, alltså fås ur (1) och (2) att antingen
+		$\mathbf{C} = \mathbf{0}$ eller $\sin(\mathbf{\Phi}) = \mathbf{0}$. $\mathbf{C} = \mathbf{0}$ ger
+		ingen lösning för (3) och (4), varpå vi får att $\sin(\mathbf{\Phi}) = \mathbf{0}$, vilket ger
+		att $\mathbf{\Phi} = n \pi, \,\, n \in \mathbb{N}^{\ast}$. (3) och (4) ger oss då att:
+		
+		\begin{equation*}
+			C_i = \frac{\pm \dot{x}_i}{\sqrt{\lambda_i} \omega_o}
+		\end{equation*}
+		
+		\begin{figure}
+			\hspace{-1.5cm}\includegraphics[width=1.2\textwidth]{oscillations-over-time.eps}
+			\caption{Amplitud för avvikelse hos respektive partiklar över tid, för 100 partiklar och en
+			begynnelsehastighet $0.1 \, \mathrm{le} \cdot \omega_o$ för de mittersta 10 procenten av partiklarna.
+			Amplituden är normaliserad så att 1 är den maximal amplitud som uppnås.}
+			\label{oscot}
+		\end{figure}
 \end{document}
