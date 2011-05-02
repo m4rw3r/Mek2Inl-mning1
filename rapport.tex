@@ -5,12 +5,8 @@
 \usepackage[swedish]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
-\usepackage{ae}
-\usepackage{units}
-\usepackage{icomma}
 \usepackage{color}
 \usepackage{graphicx}
-\usepackage{bbm}
 \usepackage{wrapfig}
 %\usepackage{epsfig}
 \usepackage[retainorgcmds]{IEEEtrantools}
@@ -21,11 +17,11 @@
 	linkcolor=black,
 	urlcolor=black,
 	pdftex}
-\newcommand{\N}{\ensuremath{\mathbbm{N}}}
-\newcommand{\Z}{\ensuremath{\mathbbm{Z}}}
-\newcommand{\Q}{\ensuremath{\mathbbm{Q}}}
-\newcommand{\R}{\ensuremath{\mathbbm{R}}}
-\newcommand{\C}{\ensuremath{\mathbbm{C}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
 \newcommand{\rd}{\ensuremath{\mathrm{d}}}
 \newcommand{\id}{\ensuremath{\,\rd}}
 \newcommand{\degree}{\ensuremath{^{\circ}}}
@@ -35,7 +31,7 @@
 \begin{document}
 	\pagenumbering{roman}
 
-\title{Analytisk och nummerisk undersökning av modell för oscillerande partiklar upphängda i ideala fjädrar i en spatiell dimension}
+\title{Analytisk och numerisk undersökning av modell för oscillerande partiklar upphängda i ideala fjädrar i en spatiell dimension}
 	\author{Stefan Buller och Martin Wernstål}
 	\date{DATE}
 	\maketitle{}
@@ -603,7 +599,7 @@
 		matrisen $K$, låt $\boldsymbol{\lambda}$ vara vektorn med motsvarande egenvärden samt att
 		$\omega_o = k / m$ där $k$ är fjäderkonstanten och $m$ är massan hos en partikel.
 		Enligt tidigare beräkningar kan då partiklarnas avvikelser från jämntviktsläget vid
-		tiden t skrivas som:
+		tiden $t$ skrivas som:
 		
 		\begin{equation*}
 			Q(t) = A \left[ \mathbf{C} \odot \sin(\omega_o t \sqrt{\boldsymbol{\lambda}} + \mathbf{\Phi} \right]
@@ -615,8 +611,8 @@
 		Med begynnelsevilkoren: 
 		
 		\begin{IEEEeqnarray*}{C}
-			Q(0)=\mathbf{0}\\
-			\dot{Q}(0)=\mathbf{v}
+			Q(0) = \mathbf{0} \\
+			\dot{Q}(0) = \mathbf{v}
 		\end{IEEEeqnarray*}
 		
 		Där $\mathbf{v}$ är en vektor för vilkoret att de mittersta $10\%$ av partiklarna ges en liten

@@ -53,10 +53,10 @@ clf
 	for t=0:num_steps-1
 		data(1:100, t+1) = result(t*time_step + stime);
 		
-		%h=plot(linspace(0, 100),result(t*time_step + stime));
-		%ylim([-1 1]);
+		h=plot(linspace(0, 100),result(t*time_step + stime));
+		ylim([-1 1]);
         
-		%saveas(h, strcat('plot', sprintf('%d', t), '.png'));
+		saveas(h, strcat('plot', sprintf('%d', t), '.png'));
        % pause(0.005);
     end
     
