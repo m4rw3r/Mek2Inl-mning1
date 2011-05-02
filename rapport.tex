@@ -8,6 +8,9 @@
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{pifont}
 %\usepackage{epsfig}
 \usepackage[retainorgcmds]{IEEEtrantools}
 \usepackage{hyperref}
@@ -641,4 +644,29 @@
 			begynnelsehastighet $0.1 \, \mathrm{le} \cdot \omega_o$ för de mittersta 10 procenten av partiklarna.}
 			\label{oscot}
 		\end{figure}
+	
+	\clearpage
+	
+	\begin{appendix}
+	
+		\lstset{
+		  literate={ö}{{\"o}}1
+		           {å}{{\aa}}1
+		           {ä}{{\"a}}1
+		}
+	
+		\lstset{language=MATLAB, commentstyle=\textit, showspaces=false, showstringspaces=false, showtabs=false, tabsize=2, basicstyle=\scriptsize, breaklines, breakatwhitespace, postbreak=\ding{229}, extendedchars=true}
+	
+		\section{Programkod för Uppgift 3}
+	
+			\begin{framed}
+				\lstinputlisting[]{uppg3.m}
+			\end{framed}
+	
+		\section{Programkod för Uppgift 4}
+	
+			\begin{framed}
+				\lstinputlisting[]{uppg4.m}
+			\end{framed}
+	\end{appendix}
 \end{document}
