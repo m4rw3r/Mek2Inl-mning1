@@ -28,6 +28,7 @@
 \newcommand{\rd}{\ensuremath{\mathrm{d}}}
 \newcommand{\id}{\ensuremath{\,\rd}}
 \newcommand{\degree}{\ensuremath{^{\circ}}}
+\newcommand{\iu}{\ensuremath{\mathrm{i}}}
 
 
 
@@ -36,12 +37,12 @@
 
 \title{Analytisk och numerisk undersökning av modell för oscillerande partiklar upphängda i ideala fjädrar i en spatiell dimension}
 	\author{Stefan Buller och Martin Wernstål}
-	\date{DATE}
+	\date{TODO: DATE}
 	\maketitle{}
 	\thispagestyle{empty}
 
 	\begin{abstract}
-		Sammanfattning
+		TODO: Sammanfattning
 	\end{abstract}
 
 \newpage{}
@@ -57,67 +58,6 @@
 	
 	
 \section{Problem 1}
-	
-	\setlength{\unitlength}{1mm}
-	\begin{picture} (120, 40)
-		\put(25, 20){\circle{20}}
-		\put(57, 20){\circle{20}}
-		\put(89, 20){\circle{20}}
-		
-		\put(0, 20){\line(5,0){5}}
-		\put(5, 20){\line(1,5){1}}
-		\put(6, 25){\line(1,-5){1}}
-		\put(7, 20){\line(1,-5){1}}
-		\put(8, 15){\line(1,5){1}}
-		\put(9, 20){\line(1,5){1}}
-		\put(10, 25){\line(1,-5){1}}
-		\put(11, 20){\line(1,-5){1}}
-		\put(12, 15){\line(1,5){1}}
-		\put(13, 20){\line(5,0){5}}
-		
-		\put(32, 20){\line(5,0){5}}
-		\put(37, 20){\line(1,5){1}}
-		\put(38, 25){\line(1,-5){1}}
-		\put(39, 20){\line(1,-5){1}}
-		\put(40, 15){\line(1,5){1}}
-		\put(41, 20){\line(1,5){1}}
-		\put(42, 25){\line(1,-5){1}}
-		\put(43, 20){\line(1,-5){1}}
-		\put(44, 15){\line(1,5){1}}
-		\put(45, 20){\line(5,0){5}}
-		
-		\put(64, 20){\line(5,0){5}}
-		\put(69, 20){\line(1,5){1}}
-		\put(70, 25){\line(1,-5){1}}
-		\put(71, 20){\line(1,-5){1}}
-		\put(72, 15){\line(1,5){1}}
-		\put(73, 20){\line(1,5){1}}
-		\put(74, 25){\line(1,-5){1}}
-		\put(75, 20){\line(1,-5){1}}
-		\put(76, 15){\line(1,5){1}}
-		\put(77, 20){\line(5,0){5}}
-		
-		\put(96, 20){\line(5,0){5}}
-		\put(101, 20){\line(1,5){1}}
-		\put(102, 25){\line(1,-5){1}}
-		\put(103, 20){\line(1,-5){1}}
-		\put(104, 15){\line(1,5){1}}
-		\put(105, 20){\line(1,5){1}}
-		\put(106, 25){\line(1,-5){1}}
-		\put(107, 20){\line(1,-5){1}}
-		\put(108, 15){\line(1,5){1}}
-		\put(109, 20){\line(5,0){5}}
-		
-		\put(23, 19){$m$}
-		\put(55, 19){$m$}
-		\put(87, 19){$m$}
-		
-		\put(8, 27){$k$}
-		\put(40, 27){$k$}
-		\put(72, 27){$k$}
-		\put(104, 27){$k$}
-		
-	\end{picture}
 	
 	\setlength{\unitlength}{1mm}
 	\begin{picture} (120, 40)
@@ -372,20 +312,24 @@
 	\end{picture}
 
 	Ur friläggning av de enskilda partiklarna finner vi att:
-
-	\begin{IEEEeqnarray*}{rCl}
-		m \ddot{q_1} & = & k (q_2 - q_1) \\
-		M \ddot{q_2} & = & k (q_3 - q_2) - k (q_2 - q_1) \\
-		m \ddot{q_3} & = & -k (q_3 - q_2)
-	\end{IEEEeqnarray*}
 	
-	Vilket ger:
-	
-	\begin{IEEEeqnarray*}{rlllCl}
-		\ddot{q_1} &+\frac{k}{m}q_1 & -\frac{k}{m}q_2  &                 &=& 0 \\
-		\ddot{q_2} &-\frac{k}{M}q_1 & +\frac{2k}{M}q_2 & -\frac{k}{M}q_3 &=& 0 \\
-		\ddot{q_3} &                & -\frac{k}{m}q_2  & +\frac{k}{m}q_3 &=& 0 \\
-	\end{IEEEeqnarray*}
+	\begin{equation*}
+		\left\{ \,
+		\begin{IEEEeqnarraybox}[\IEEEeqnarraystrutmode][c]{rCl}
+			m \ddot{q_1} & = & k (q_2 - q_1) \\
+			M \ddot{q_2} & = & k (q_3 - q_2) - k (q_2 - q_1) \\
+			m \ddot{q_3} & = & -k (q_3 - q_2)
+		\end{IEEEeqnarraybox}
+		\right.
+		\Leftrightarrow
+		\left\{ \,
+		\begin{IEEEeqnarraybox}[\IEEEeqnarraystrutmode][c]{rlllCl}
+			\ddot{q_1} &+\frac{k}{m}q_1 & -\frac{k}{m}q_2  &                 &=& 0 \\
+			\ddot{q_2} &-\frac{k}{M}q_1 & +\frac{2k}{M}q_2 & -\frac{k}{M}q_3 &=& 0 \\
+			\ddot{q_3} &                & -\frac{k}{m}q_2  & +\frac{k}{m}q_3 &=& 0 \\
+		\end{IEEEeqnarraybox}
+		\right.
+	\end{equation*}
 	
 	Inför:
 	
@@ -412,18 +356,16 @@
 	
 	Ansätt:
 	
-	\begin{IEEEeqnarray*}{l}
+	\begin{IEEEeqnarray*}{rCl}
 		Q=Ae^{i \omega t}
 		\hspace{6pt}
-		\Rightarrow
+		& \Rightarrow &
 		\hspace{6pt}
-		\ddot{Q}=-\omega^2Ae^{i \omega t}
-	\end{IEEEeqnarray*}
-	
-	\begin{IEEEeqnarray*}{C}
+		\ddot{Q} = -\omega^2 A e^{i \omega t} \\
+		\Rightarrow
 		e^{i \omega t}(\omega_o^2KA-\omega^2A)=0
 		\hspace{6pt}
-		\Leftrightarrow
+		& \Leftrightarrow &
 		\hspace{6pt}
 		KA = \frac{\omega^2}{\omega_o^2}A
 	\end{IEEEeqnarray*}
@@ -553,7 +495,7 @@
 		Detta ger oss enligt ovan egenfrekvenserna $\omega_i=\sqrt{\lambda_i} \omega_o$,
 		med den allmäna fysikaliska lösningen:
 		\begin{IEEEeqnarray*}{rCl}
-			Q(t) &=&\sum c_i u_i \sin(\omega_i t+ \Phi_i)
+			Q(t) & = & \sum c_i u_i \sin(\omega_i t + \Phi_i)
 		\end{IEEEeqnarray*}
 		
 		enligt samma beräkningar och resonemang som i uppgift 1.
@@ -655,19 +597,188 @@
 		           {å}{{\aa}}1
 		           {ä}{{\"a}}1
 		}
-	
-		\lstset{language=MATLAB, commentstyle=\textit, showspaces=false, showstringspaces=false, showtabs=false, tabsize=2, basicstyle=\scriptsize, breaklines, breakatwhitespace, postbreak=\ding{229}, extendedchars=true}
-	
+		
+		\lstset{language = MATLAB,
+		        commentstyle = \textit,
+		        showspaces = false,
+		        showstringspaces = false,
+		        showtabs = false,
+		        tabsize = 2,
+		        basicstyle = \scriptsize,
+		        breaklines,
+		        breakatwhitespace,
+		        postbreak = \ding{229},
+		        extendedchars = true
+		}
+		
 		\section{Programkod för Uppgift 3}
-	
+			
 			\begin{framed}
 				\lstinputlisting[]{uppg3.m}
 			\end{framed}
-	
+		
 		\section{Programkod för Uppgift 4}
-	
+			
 			\begin{framed}
 				\lstinputlisting[]{uppg4.m}
 			\end{framed}
+	
+	\newpage
+	
+\section{Sats om matrisbeskrivning av ett system av $N$ partiklar}
+	
+	\setcounter{equation}{0}
+	
+	Bevis genomfört av Torbjörn Rathsman och Martin Wernståhl.
+	
+	\subsection{Förutsättningar}
+		\label{assumptions}
+		
+		\begin{itemize}
+			\item Fjädrarna bevarar sin jämnvikts-längd under töjning.
+			\item Alla fjädrar är linjära med fjäderkonstant $k$, deras vikt försummas.
+			\item Alla partiklar räknas som punktmassor och har samma massan $m$.
+			\item $Q(t)=\begin{bmatrix}q_1 \\ \vdots \\ q_j \\ \vdots \\ q_N \end{bmatrix}$ där $q_j$ är
+			      partikeln $j$'s avvikelse från sitt jämnviktsläge.
+			\item Varje partikel är ansluten till två fjädrar som påverkar partikeln
+			      med $F_j = -k q_j$, $k = z\frac{\mathrm{Kraftenhet}}{\mathrm{Massenhet}}$, $z\in \R^{+}$
+			      var.
+			\item $\omega_o = \sqrt{\frac{k}{m}}$ där $k$ är fjäderkonstanten och $m$ är en partikels massa.
+		\end{itemize}
+	
+	
+	\subsection{Sats}
+		\label{sats}
+		
+		Ett system med $N$ partiklar som uppfyller villkoren definierade i \ref{assumptions} kan skrivas
+		på formen:
+		
+		\begin{equation*}
+			\ddot{Q}(t) + \omega_{o}^{2} K Q = 0
+		\end{equation*}
+		
+		Där $K$ är en tri-diagonal matris med värdena $-1$, $2$, $-1$ och $\omega_o = \sqrt{\frac{k}{m}}$
+		
+	\newpage
+	
+	\subsection{Bevis}
+	\subsubsection*{$N=1$:}
+		
+		Enligt friläggning:
+		
+		\begin{equation}
+			\ddot{q_1} = \frac{-2 k q_1}{m} \hspace{12pt} \Leftrightarrow \hspace{12pt} \ddot{Q} + \omega_o^2 \begin{bmatrix}2\end{bmatrix} Q = 0
+			\label{N=1}
+		\end{equation}
+		
+		Där då $\begin{bmatrix}2\end{bmatrix}$ är vår sökta matris enligt \ref{sats}.
+		
+	\subsubsection*{$N=2$:}
+		
+		Enligt friläggning:
+		
+		\begin{equation*}
+			\left\{ \,
+			\begin{IEEEeqnarraybox}[\IEEEeqnarraystrutmode][c]{rCl}
+				\ddot{q_1} & = & -\frac{k q_1}{m} - \frac{k(q_1-q_2)}{m} \\
+				\ddot{q_2} & = & -\frac{k q_2}{m} - \frac{k(q_2-q_1)}{m}
+			\end{IEEEeqnarraybox}
+			\right.
+			\hspace{12pt}
+			\Leftrightarrow
+			\hspace{12pt}
+			\ddot{Q} + \omega_o^2 \begin{bmatrix}
+				2 & -1 \\
+				-1 & 2
+			\end{bmatrix} Q = 0
+			\label{N=2}
+		\end{equation*}
+		
+		Där då $\begin{bmatrix}
+			2 & -1 \\
+			-1 & 2
+		\end{bmatrix}$ är vår sökta matris $K$ enligt \ref{sats}.
+		
+	\subsubsection*{$N = 3$:}
+		
+		Enligt friläggning:
+		
+		\begin{equation*}
+			\left\{ \,
+			\begin{IEEEeqnarraybox}[\IEEEeqnarraystrutmode][c]{rCl}
+				\ddot{q_1} & = & -\frac{k q_1}{m} + \frac{k (q_2 - q_1)}{m} \\
+				\ddot{q_2} & = & -\frac{k (q_2 - q_1)}{m} + \frac{k (q_3 - q_2)}{m} \\
+				\ddot{q_3} & = & -\frac{k q_3}{m} + \frac{k (q_3 - q_2)}{m}
+			\end{IEEEeqnarraybox}
+			\right.
+			\hspace{12pt}
+			\Leftrightarrow
+			\hspace{12pt}
+			\ddot{Q} + \omega_o^2 \begin{bmatrix}
+				2 & -1 & 0 \\
+				-1 & 2 & -1 \\
+				0 & -1 &2
+			\end{bmatrix} Q = 0
+		\end{equation*}
+		
+		Där då $\begin{bmatrix}
+			2 & -1 & 0 \\
+			-1 & 2 & -1 \\
+			0 & -1 &2
+		\end{bmatrix}$ är vår sökta matris $K$ enligt \ref{sats}.
+	
+	\newpage
+	
+	\subsubsection*{$N = \{x: x \in \N \land x > 3\}$:}
+		
+		Antag att för $N - 2$:
+		
+		\begin{equation}
+			q_{N-2} = -\frac{k (q_{N-2} - q_{N-3})}{m} + \frac{k(q_{N-1}-q_{N-2})}{m}
+			\label{N=x 1}
+		\end{equation}
+		
+		För partikel $N$ gäller:
+		
+		\begin{equation}
+			q_N = -\frac{k q_N}{m} + \frac{k (q_N - q_{N-1})}{m}
+			\label{N=x N}
+		\end{equation}
+		
+		Enligt Newton III så påverkas partikel $N - 1$ med en kraft som är lika stor
+		som $k(q_{N-2} - q_{N-3}) - k (q_{N-1} - q_N))$ (följer från \ref{N=x 1} och \ref{N=x N})
+		men motriktad:
+		
+		\begin{equation}
+			q_{N-1} = -\frac{k(q_{N-1}-q_{N-2})}{m} + \frac{k(q_{N-1}-q_N)}{m}
+		\end{equation}
+		
+		Ur detta följer att:
+		
+		\begin{equation*}
+			\begin{cases}
+				q_1 = -\frac{k (q_1 - q_2)}{m} + \frac{k(q_2 - q_1)}{m} \\
+				\hspace{64pt} \vdots \\
+				q_j = -\frac{k (q_j - q_{j-1})}{m} + \frac{k(q_{j+1}-q_j)}{m} \\
+				\hspace{64pt} \vdots \\
+				q_N = -\frac{k q_N}{m} + \frac{k (q_N - q_{N-1})}{m}
+			\end{cases}
+		\end{equation*}
+		
+		Vilket motsvarar:
+		
+		\begin{equation*}
+			\ddot{Q} + \omega_o^2 \begin{bmatrix}
+				2 & -1 & 0 & & \cdots & 0 \\
+				-1 & 2 & -1 & 0 & \cdots & \\
+				0 & \ddots & \ddots & \ddots & & \vdots \\
+				\vdots &  & \ddots & \ddots & \ddots & 0 \\
+				& \cdots & 0 & -1 & 2  & -1 \\
+				0 & \cdots & & 0 & -1 & 2
+			\end{bmatrix} Q = 0
+		\end{equation*}
+		
+		Där då vårt sökta $K$ från \ref{sats} är en tridiagonal matris med värdena $-1$, $2$ $-1$. \hfill $\square$
+		
 	\end{appendix}
 \end{document}
