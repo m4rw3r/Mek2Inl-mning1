@@ -29,6 +29,7 @@
 \newcommand{\id}{\ensuremath{\,\rd}}
 \newcommand{\degree}{\ensuremath{^{\circ}}}
 \newcommand{\iu}{\ensuremath{\mathrm{i}}}
+\newcommand{\captiona}[1]{\caption{\scriptsize{#1}}}
 
 
 
@@ -59,65 +60,59 @@
 	
 \section{Problem 1}
 	
-	\setlength{\unitlength}{1mm}
-	\begin{picture} (120, 40)
-		\put(25, 20){\circle{20}}
-		\put(57, 20){\circle{20}}
-		\put(89, 20){\circle{20}}
-		
-		\put(18, 20){\vector(-1,0){8}}
-		
-		\put(32, 20){\vector(1,0){8}}
-		
-		\put(50, 20){\vector(-1,0){8}}
-		
-		\put(64, 20){\vector(1,0){8}}
-		
-		\put(82, 20){\vector(-1,0){8}}
-		
-		\put(96, 20){\vector(1,0){8}}
-		
-		\put(23, 19){$m$}
-		\put(55, 19){$m$}
-		\put(87, 19){$m$}
-		
-		\put(10, 22){$kq_1$}
-		\put(32.5, 22){$k(q_2-q_1)$}
-		\put(64.5, 22){$k(q_3-q_2)$}
-		\put(98, 22){$-k(q_3)$}
-		
-		\put(25, 30){\line(0,1){2}}
-		\put(57, 30){\line(0,1){2}}
-		\put(89, 30){\line(0,1){2}}
-		
-		\put(25, 31){\vector(1,0){8}}
-		\put(57, 31){\vector(1,0){8}}
-		\put(89, 31){\vector(1,0){8}}
-		
-		\put(27, 33){$q_1$}
-		\put(59, 33){$q_2$}
-		\put(91, 33){$q_3$}
-		
-	\end{picture}
+	\begin{figure}
+		\setlength{\unitlength}{1mm}
+		\begin{picture} (120, 40)
+			\put(25, 20){\circle{20}}
+			\put(57, 20){\circle{20}}
+			\put(89, 20){\circle{20}}
+			
+			\put(18, 20){\vector(-1,0){8}}
+			
+			\put(32, 20){\vector(1,0){8}}
+			
+			\put(50, 20){\vector(-1,0){8}}
+			
+			\put(64, 20){\vector(1,0){8}}
+			
+			\put(82, 20){\vector(-1,0){8}}
+			
+			\put(96, 20){\vector(1,0){8}}
+			
+			\put(23, 19){$m$}
+			\put(55, 19){$m$}
+			\put(87, 19){$m$}
+			
+			\put(10, 22){$kq_1$}
+			\put(32.5, 22){$k(q_2-q_1)$}
+			\put(64.5, 22){$k(q_3-q_2)$}
+			\put(98, 22){$-k(q_3)$}
+			
+			\put(25, 30){\line(0,1){2}}
+			\put(57, 30){\line(0,1){2}}
+			\put(89, 30){\line(0,1){2}}
+			
+			\put(25, 31){\vector(1,0){8}}
+			\put(57, 31){\vector(1,0){8}}
+			\put(89, 31){\vector(1,0){8}}
+			
+			\put(27, 33){$q_1$}
+			\put(59, 33){$q_2$}
+			\put(91, 33){$q_3$}
+		\end{picture}
+		\captiona{Friläggning för Problem 1 \label{problem 1}}
+	\end{figure}
 
-	Ur friläggning av de enskilda partiklarna finner vi att:
+	Ur friläggning (Figur \ref{problem 1}) av de enskilda partiklarna finner vi att:
 
 	\begin{IEEEeqnarray*}{rCl}
 		m \ddot{q_1} & = & k (q_2 - q_1) - kq_1 \\
 		m \ddot{q_2} & = & k (q_3 - q_2) - k (q_2 - q_1) \\
 		m \ddot{q_3} & = & k (q_3 - q_2) - kq_3
 	\end{IEEEeqnarray*}
-
-	Vilket är ekvivalent med:
-
-	\begin{IEEEeqnarray*}{rCrCrCrCl}
-		\ddot{q_1} &+& \frac{2k}{m}q_1 &-& \frac{k}{m}q_2 & & & = & 0 \\
-		\ddot{q_2} &-& \frac{2}{m}q_1 &+& \frac{2k}{m}q_2 &-& \frac{k}{m}q_3 &=& 0 \\
-		\ddot{q_3} & & &-&\frac{k}{m}q_2 &+&\frac{2k}{m}q_3 & = & 0
-	\end{IEEEeqnarray*}
 	
 	Vi inför beteckningarna: 
-
+	
 	\begin{IEEEeqnarray*}{rClCrClCrCl}
 		\omega_o & = & \sqrt{k/m} &\hspace{12pt} &
 		K & = &
@@ -139,131 +134,30 @@
 	\begin{equation*}
 		\ddot{Q} + \omega_o^2 KQ = 0
 	\end{equation*}
-
-	Vi gör ansatzen:
-
-	\begin{IEEEeqnarray*}{rClCrCl}
-		Q(t) & = & A e^{i \omega t} &\hspace{12pt}&
-		A & = &
-		\begin{bmatrix}
-			a_1 \\
-			a_2 \\
-			a_3
-		\end{bmatrix}
-	\end{IEEEeqnarray*}
-
-	Där $a_i, i = 1,2,3$ är amplituder för respektive partikel. Vilket ger oss:
-
-	\begin{IEEEeqnarray}{rCl}
-		\ddot{Q}&=&-\omega^2 A e^{i \omega{} t}
-		\label{qdprick}
-	\end{IEEEeqnarray}
-
-	Och insatt i ekvationssystemet får vi:
-
-	\begin{IEEEeqnarray*}{l}
-	 	e^{i \omega t}(-\omega^2 A + \omega_o^2 K A) = 0
-		\hspace{6pt}
-		\Leftrightarrow
-		\hspace{6pt}
-		KA  = \frac{\omega^2}{\omega_o^2} A
-	\end{IEEEeqnarray*}
-
-	Detta känns igen som ett egenvärdesproblem. Genom att betrakta den karakteristiska ekvationen:
-	\begin{IEEEeqnarray*}{rrCl}
-	&	\begin{vmatrix}
-			2-\frac{\omega^2}{\omega_o^2} & -1 & 0\\
-			-1 & 2 - \frac{\omega^2}{\omega_o^2} & -1 \\
-			0 & -1 & 2 - \frac{\omega^2}{\omega_o^2}
-		\end{vmatrix} & = & 0 \\
-		\Leftrightarrow &{\frac{\omega^2}{\omega_o^2}}^3 - 6 {\frac{\omega^2}{\omega_o^2}}^2 + 10 \frac{\omega^2}{\omega_o^2} - 4 & = & 0
-	\end{IEEEeqnarray*}
-
-	finner vi att egenvärdena är:
-
-	\begin{IEEEeqnarray*}{C}
-		\begin{cases}
-			\frac{\omega_1^2}{\omega_o^2}=2 \\
-			\frac{\omega_2^2}{\omega_o^2}=2+\sqrt{2} \\
-			\frac{\omega_3^2}{\omega_o^2}=2-\sqrt{2} 
-		\end{cases}
-		\Leftrightarrow{}
-		\hspace{12pt}
-		\begin{cases}
-			\omega_1 = \sqrt{2} \omega_o \\
-			\omega_2 = \Big(\sqrt{2+\sqrt{2}}\Big) \omega_o \\
-			\omega_3 = \Big(\sqrt{2-\sqrt{2}}\Big) \omega_o
-		\end{cases}
-	\end{IEEEeqnarray*}
-
-	Genom att betrakta $(K-\frac{\omega_i^2}{\omega_o^2}I)A_i=0$ för $i=1,2,3$ finner vi egenvektorerna:
 	
-	\begin{IEEEeqnarray*}{rClCrClCrCl}
-		A_1&=&
-		\begin{bmatrix}
-			1 \\ 
-			0 \\
-			-1
-		\end{bmatrix} &\hspace{12pt}&
-		A_2&=&
-		\begin{bmatrix}
-			1 \\
-			-\sqrt{2} \\
-			1 
-		\end{bmatrix} &\hspace{12pt}&
-		A_3&=&
-		\begin{bmatrix}
-			1 \\
-			\sqrt{2} \\
-			1
-		\end{bmatrix}
-	\end{IEEEeqnarray*}
+	Från detta finner vi att egenvärdena är:
 	
-	Vilket kan normaliseras till en ON-bas för $\R^3$:
+	\begin{equation*}
+		\omega_1 = \sqrt{2} \omega_o \hspace{12pt} \omega_2 = \Big(\sqrt{2+\sqrt{2}}\Big) \omega_o \hspace{12pt} \omega_3 = \Big(\sqrt{2-\sqrt{2}}\Big) \omega_o
+	\end{equation*}
 
-	\begin{IEEEeqnarray*}{rClrClrCl}
-		\hat{A_1} & = & \frac{1}{\sqrt{2}}
-		\begin{bmatrix}
-			1 \\ 
-			0 \\
-			-1
-		\end{bmatrix} & \hspace{12pt}
-		\hat{A_2} & = & \frac{1}{2}
-		\begin{bmatrix}
-			1 \\
-			-\sqrt{2} \\
-			1 
-		\end{bmatrix} & \hspace{12pt}
-		\hat{A_3} & = & \frac{1}{2}
-		\begin{bmatrix}
-			1 \\
-			\sqrt{2} \\
-			1
-		\end{bmatrix}
-	\end{IEEEeqnarray*} 
+	Genom att betrakta $(K-\frac{\omega_i^2}{\omega_o^2}I)A_i=0$ för $i=1,2,3$ finner vi egenvektorerna.
+	
 %Då vi har 3 distinkta egenvärden vet vi att våra 3 egenvektorer är ortogonala, och då vi har 3 ortogonala vektorer har vi en bas för R^3, varpå godt. amplituder för systemet, uttryckta som vektorer i R^3, kan uttryckas som en linjär kombination av dessa egenvektorer. Detta ges oss en enkel modell över amplitudförändringar över tid för godt. svängingar. (ty matrismultiplikationen blir trivial) //end självförklaring
-	Dessa egenvektorer utgör således en ON-bas för lösningsrummet till differensialekvationen.
+	Dessa egenvektorer normeras till en ON-bas för lösningsrummet till differensialekvationen.
 	En egensvängning motsvarar att den mittersta är stila medans de två yttre har motriktad
 	svängning. En lösning med kortare periodtid motsvarar att den mellersta partikeln svänger
 	motriktat de övrig med en större amplutid. Den sista lösningen med längst periodtid motsvarar
 	att all partiklarna svänger i samma riktning, den mellarsta återigen med högre amplitud.
 	
-	Den allmäna fysikaliska lösningen kan skrivas som en superposition av realdelen av ansatsen (\ref{qdprick}).
+	Den allmäna fysikaliska lösningen kan skrivas som en superposition av egenvektorerna:
 	
-	\begin{IEEEeqnarray*}{rClCl}
-		Q(t) & = & \frac{c_1}{\sqrt{2}}\begin{bmatrix}1 \\ 0 \\ -1\end{bmatrix} \sin(\sqrt{2} \omega_o t + \Phi_1) 
-		+\frac{c_2}{2}\begin{bmatrix}1 \\ -\sqrt{2} \\ 1\end{bmatrix} \sin(\sqrt{2+\sqrt{2}} \omega_o t+ \Phi_2) \\
-		&+&\frac{c_2}{2}\begin{bmatrix}1 \\ \sqrt{2} \\ 1\end{bmatrix} \sin(\sqrt{2-\sqrt{2}} \omega_o t + \Phi_3) 
-	\end{IEEEeqnarray*}
-
-	Vilket på matrisform kan skrivas som:
-
 	\begin{IEEEeqnarray*}{rCl}
-		\hat{A}&=&
-		\begin{bmatrix}
-			\hat{A_1} & \hat{A_2} & \hat{A_3}
-		\end{bmatrix} \\
-		Q(t) & = & \hat{A}
+		Q(t) & = & \begin{bmatrix}
+			\frac{1}{\sqrt{2}} & \frac{1}{2} & \frac{1}{2} \\
+			0 & \frac{-\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\
+			\frac{-1}{\sqrt{2}} & \frac{1}{2} & \frac{1}{2}
+		\end{bmatrix}
 		\begin{bmatrix}
 			c_1 \sin(\sqrt{2} \omega_o t+ \Phi_1) \\
 			c_2 \sin(\sqrt{2+\sqrt{2}} \omega_o t+ \Phi_2) \\
@@ -271,7 +165,6 @@
 		\end{bmatrix}
 	\end{IEEEeqnarray*}
 
-\newpage
 \section{Problem 2}
 \subsection{Delproblem a}
 %det finns problem  i hur vi definerar omega_o=sqrt(k/m), borde vara olika för olika massorna. BEHÖVER GÖRAS OM!
@@ -354,40 +247,11 @@
 		\ddot{Q}+\omega_o^2KQ=0
 	\end{IEEEeqnarray*}
 	
-	Ansätt:
-	
-	\begin{IEEEeqnarray*}{rCl}
-		Q=Ae^{i \omega t}
-		\hspace{6pt}
-		& \Rightarrow &
-		\hspace{6pt}
-		\ddot{Q} = -\omega^2 A e^{i \omega t} \\
-		\Rightarrow
-		e^{i \omega t}(\omega_o^2KA-\omega^2A)=0
-		\hspace{6pt}
-		& \Leftrightarrow &
-		\hspace{6pt}
-		KA = \frac{\omega^2}{\omega_o^2}A
-	\end{IEEEeqnarray*}
-	
 	Egenvärdesproblem med karakteristiskt polynom:
 	
-	\begin{IEEEeqnarray*}{C}
-		(2 \mu + 2) \frac{\omega^2}{\omega_o^2}^2- (2 \mu + 1) \frac{\omega^2}{\omega_o^2} - \frac{\omega^2}{\omega_o^2}^3 = 0 \\
-		\Rightarrow
-		\begin{cases}
-			\frac{\omega_1^2}{\omega_o^2} = 0 \\
-			\frac{\omega_2^2}{\omega_o^2} = 1 \\
-			\frac{\omega_3^2}{\omega_o^2} = 1 + 2 \mu
-		\end{cases}
-		\Leftrightarrow
-		\hspace{12pt}
-		\begin{cases}
-			\omega_1 = 0 \\
-			\omega_2 = \omega_o \\
-			\omega_3 = \sqrt{1 + 2 \mu}\omega_o
-		\end{cases}
-	\end{IEEEeqnarray*}
+	\begin{equation*}
+		\omega_1 = 0 \hspace{12pt} \omega_2 = \omega_o \hspace{12pt} \omega_3 = \sqrt{1 + 2 \mu}\omega_o
+	\end{equation*}
 	
 	Detta ger egenvektorerna:
 	
@@ -419,40 +283,19 @@
 	
 	Detta ger lösningen, med $A_i$ konverterad till ON-bas:
 	
-	\begin{IEEEeqnarray*}{rCl}
-		Q(t) &=& \frac{c_1}{\sqrt{3}}
-			\begin{bmatrix}
-				1\\
-				1\\
-				1
-			\end{bmatrix}
-			+ \frac{c_2}{\sqrt{2}}\begin{bmatrix}
-				1\\
-				0\\
-				-1
-			\end{bmatrix}\sin(\omega_o t + \Phi_2) \\
-			&+& \frac{c_3}{\sqrt{2 + 4 \mu^2}}\begin{bmatrix}
-				1 \\
-				-2 \mu \\
-				1
-			\end{bmatrix}\sin\big(\sqrt{1 + 2 \mu}\omega_o t + \Phi_3 \big)
-	\end{IEEEeqnarray*}
-	
-	\begin{IEEEeqnarray*}{c}
-		\hat{A} = \begin{bmatrix}
+	\begin{equation*}
+		Q(t) = 
+		\begin{bmatrix}
 			\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}}  & \frac{1}{\sqrt{2 + 4 \mu^2}} \\
 			\frac{1}{\sqrt{3}} & 0                   & \frac{-2 \mu}{\sqrt{2 + 4 \mu^2}} \\
 			\frac{1}{\sqrt{3}} & \frac{-1}{\sqrt{2}} & \frac{1}{\sqrt{2 + 4 \mu^2}}
 		\end{bmatrix}
-		\hspace{14pt}
-		\Rightarrow
-		\hspace{14pt}
-		Q(t) = \hat{A}\begin{bmatrix}
+		\begin{bmatrix}
 			c_1 \\
 			c_2 \sin(\omega_o t + \Phi_2) \\
 			c_3 \sin\big(\sqrt{1+2 \mu}\omega_o t + \Phi_3 \big)
 		\end{bmatrix}
-	\end{IEEEeqnarray*}
+	\end{equation*}
 
 	\subsection{Delproblem b}
 		
@@ -477,17 +320,11 @@
 \section{Uppgift 3}
 	\subsection{Deluppgift a}
 		
-		Inför samma beteckningar som i uppgift 1. Vi inser lätt att egenvärdesproblemet kan uttryckas som:
+		Enligt \ref{sats} kan egenvärdesproblemet uttryckas som:
 		
 		\begin{IEEEeqnarray*}{rCl}
 			KA & = & \frac{\omega^2}{\omega_o^2} A
 		\end{IEEEeqnarray*}
-		
-		Där $K$ inses vara den $n$x$n$ tridiagonala matrisen med 2 på diagonalen och -1 på
-		båda sidorna av diagonalen, ty det avstånd $q_i$ som partikel $i\in\{x: 1\le x \le n\}$ flytas bidrar både
-		till att öka kraften på partikeln från fjädern i negativ riktning samt minska kraften
-		ifrån fjädern i positiv riktning, varpå vi får dubbelt bidrag från $q_i$ och
-		enkla bidrag motriktade $q_i$ från intilligande partiklar ($q_{i-1}$, $q_{i+1}$).
 		
 		Låt $u_i$ vara de ortonormala egenvektorerna till $K$ och $\lambda_i$
 		de motsvarande egenvärdena för $i=1,\dots,n$.
@@ -507,8 +344,8 @@
 		%referens till bild
 		
 		\begin{figure}
-			\hspace{-1.5cm}\includegraphics[width=1.2\textwidth]{staendevagor.eps}
-			\caption{De 6 första egensvängingarna som stående vågor, för 20 till 24 partiklar.
+			\includegraphics[width=1\textwidth]{staendevagor.eps}
+			\captiona{De 6 första egensvängingarna som stående vågor, för 20 till 24 partiklar.
 			X axeln är index för partiklarna, ordnade efter avstånd från en av väggarna. y-axeln
 			för de respektive plottarna motsvarar partiklarnas avvikelse från jämnviktslägget,
 			dess amplitud. Amplituden är normaliserad så att maximala amplituden för en partikel
@@ -523,8 +360,8 @@
 		%bilder ska fixas, 10 till 20 partiklar verkar lämpligt, över 20 lär vara för svårtyt.
 		
 		\begin{figure}
-			\hspace{-1.5cm}\includegraphics[width=1.2\textwidth]{egenfrekvenser.eps}
-			\caption{Egenfrekvenser för de 6 första egensväningarna vid 20 till 24 partiklar
+			\includegraphics[width=1\textwidth]{egenfrekvenser.eps}
+			\captiona{Egenfrekvenser för de 6 första egensväningarna vid 20 till 24 partiklar
 			illustrerade som sinusvågor. Tidsenheten på x-axeln, $\frac{2\pi}{\omega_o}$,
 			innebär att en periodtid på 1 motsvarar periodtiden för en enda partikel i en
 			odämpad fjäder. Olika färger motsvarar olika egensvängingar i ordningen blå, röd,
@@ -532,8 +369,6 @@
 			%'b','r','g','k','c','y','m'
 			\label{egenf}
 		\end{figure}
-		
-		\clearpage
 		
 \section{Uppgift 4}
 	
@@ -544,11 +379,11 @@
 		Låt $\hat{A}$ vara matrisen med de normerade egenvektorerna till den tridiagonala
 		matrisen $K$, låt $\boldsymbol{\lambda}$ vara vektorn med motsvarande egenvärden samt att
 		$\omega_o = k / m$ där $k$ är fjäderkonstanten och $m$ är massan hos en partikel.
-		Enligt tidigare beräkningar kan då partiklarnas avvikelser från jämntviktsläget vid
+		Enligt \ref{sats} kan då partiklarnas avvikelser från jämntviktsläget vid
 		tiden $t$ skrivas som:
 		
 		\begin{equation*}
-			Q(t) = A \left[ \mathbf{C} \odot \sin(\omega_o t \sqrt{\boldsymbol{\lambda}} + \mathbf{\Phi} )\right]
+			Q(t) = \hat{A} \left[ \mathbf{C} \odot \sin(\omega_o t \sqrt{\boldsymbol{\lambda}} + \mathbf{\Phi} )\right]
 		\end{equation*}
 		
 		där $\mathbf{C}$ och $\mathbf{\Phi}$ är vektorer med konstanter som ges av begynnelsevilkor,
@@ -582,8 +417,8 @@
 		\end{equation*}
 		
 		\begin{figure}
-			\hspace{-1.5cm}\includegraphics[width=1.2\textwidth]{oscillations-over-time.eps}
-			\caption{Amplitud för avvikelse hos respektive partiklar över tid, för 100 partiklar och en
+			\includegraphics[width=1\textwidth]{oscillations-over-time.eps}
+			\captiona{Amplitud för avvikelse hos respektive partiklar över tid, för 100 partiklar och en
 			begynnelsehastighet $0.1 \, \mathrm{le} \cdot \omega_o$ för de mittersta 10 procenten av partiklarna.}
 			\label{oscot}
 		\end{figure}
@@ -718,7 +553,7 @@
 		\end{equation}
 		
 		Enligt Newton III så påverkas partikel $N - 1$ med en kraft som är lika stor
-		som $k(q_{N-2} - q_{N-3}) - k (q_{N-1} - q_N))$ (följer från \ref{N=x 1} och \ref{N=x N})
+		som $k(q_{N-1} - q_{N-2}) - k (q_{N-1} - q_N))$ (följer från \ref{N=x 1} och \ref{N=x N})
 		men motriktad:
 		
 		\begin{equation}
@@ -729,7 +564,7 @@
 		
 		\begin{equation*}
 			\begin{cases}
-				q_1 = -\frac{k (q_1 - q_2)}{m} + \frac{k(q_2 - q_1)}{m} \\
+				q_1 = -\frac{k q_1}{m} + \frac{k(q_2 - q_1)}{m} \\
 				\hspace{64pt} \vdots \\
 				q_j = -\frac{k (q_j - q_{j-1})}{m} + \frac{k(q_{j+1}-q_j)}{m} \\
 				\hspace{64pt} \vdots \\
