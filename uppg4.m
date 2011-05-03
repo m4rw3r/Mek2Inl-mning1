@@ -90,6 +90,8 @@ function apa()
 	maxamp = P .* repmat(C, 1, N);
 	hold on
 	plot(repmat(1:N, N, 1)', maxamp')
+	xlabel('Partikel-index');
+	ylabel('Amplitud');
 	
 function [matrix] = triDiag(side_length)
 	% Generera den tridiagonala matrisen:
