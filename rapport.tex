@@ -60,7 +60,7 @@
 	
 \section{Problem 1}
 	
-	\begin{figure}
+	\begin{figure}[h]
 		\setlength{\unitlength}{1mm}
 		\begin{picture} (120, 40)
 			\put(25, 20){\circle{20}}
@@ -100,6 +100,7 @@
 			\put(59, 33){$q_2$}
 			\put(91, 33){$q_3$}
 		\end{picture}
+		\vspace{-48pt}
 		\captiona{Friläggning för Problem 1 \label{problem 1}}
 	\end{figure}
 
@@ -169,41 +170,45 @@
 \subsection{Delproblem a}
 %det finns problem  i hur vi definerar omega_o=sqrt(k/m), borde vara olika för olika massorna. BEHÖVER GÖRAS OM!
 	
-	\setlength{\unitlength}{1mm}
-	\begin{picture} (120, 40)
-		\put(25, 20){\circle{20}}
-		\put(57, 20){\circle{20}}
-		\put(89, 20){\circle{20}}
-		
-		\put(32, 20){\vector(1,0){8}}
-		
-		\put(50, 20){\vector(-1,0){8}}
-		
-		\put(64, 20){\vector(1,0){8}}
-		
-		\put(82, 20){\vector(-1,0){8}}
-		
-		\put(23, 19){$m$}
-		\put(55, 19){$M$}
-		\put(87, 19){$m$}
-		
-		\put(32.5, 22){$k(q_2-q_1)$}
-		\put(64.5, 22){$k(q_3-q_2)$}
-		
-		\put(25, 30){\line(0,1){2}}
-		\put(57, 30){\line(0,1){2}}
-		\put(89, 30){\line(0,1){2}}
-		
-		\put(25, 31){\vector(1,0){8}}
-		\put(57, 31){\vector(1,0){8}}
-		\put(89, 31){\vector(1,0){8}}
-		
-		\put(27, 33){$q_1$}
-		\put(59, 33){$q_2$}
-		\put(91, 33){$q_3$}
-		
-	\end{picture}
-
+	\begin{figure}[h]
+		\setlength{\unitlength}{1mm}
+		\begin{picture} (120, 40)
+			\put(25, 20){\circle{20}}
+			\put(57, 20){\circle{20}}
+			\put(89, 20){\circle{20}}
+			
+			\put(32, 20){\vector(1,0){8}}
+			
+			\put(50, 20){\vector(-1,0){8}}
+			
+			\put(64, 20){\vector(1,0){8}}
+			
+			\put(82, 20){\vector(-1,0){8}}
+			
+			\put(23, 19){$m$}
+			\put(55, 19){$M$}
+			\put(87, 19){$m$}
+			
+			\put(32.5, 22){$k(q_2-q_1)$}
+			\put(64.5, 22){$k(q_3-q_2)$}
+			
+			\put(25, 30){\line(0,1){2}}
+			\put(57, 30){\line(0,1){2}}
+			\put(89, 30){\line(0,1){2}}
+			
+			\put(25, 31){\vector(1,0){8}}
+			\put(57, 31){\vector(1,0){8}}
+			\put(89, 31){\vector(1,0){8}}
+			
+			\put(27, 33){$q_1$}
+			\put(59, 33){$q_2$}
+			\put(91, 33){$q_3$}
+			
+		\end{picture}
+		\vspace{-48pt}
+		\captiona{Friläggning för Problem 2 \label{problem 2}}
+	\end{figure}
+	
 	Ur friläggning av de enskilda partiklarna finner vi att:
 	
 	\begin{equation*}
@@ -301,13 +306,9 @@
 		
 		Genom att betraktat fallet där $m=16u, M=12u$ fås egenfrekvenserna 
 		
-		\begin{IEEEeqnarray*}{C}
-			\begin{cases}
-				\omega_1 = 0 \\
-				\omega_2 = \omega_o \\
-				\omega_3 = \sqrt{1+8/3} \omega_o
-			\end{cases}
-		\end{IEEEeqnarray*}
+		\begin{equation*}
+			\omega_1 = 0 \hspace{12pt} \omega_2 = \omega_o \hspace{12pt} \omega_3 = \sqrt{1+8/3} \omega_o
+		\end{equation*}
 		
 		Vilket ger kvoten för egensväningarna: $\frac{\omega_3}{\omega_2} =\sqrt{\frac{11}{3}} = 1.9148$.
 		
@@ -343,15 +344,12 @@
 		egensvängingarna partiklarnas amplituder som fås ur egensvängingens egenvektor. Se figur \ref{stavag}.
 		%referens till bild
 		
-		\begin{figure}
+		\begin{figure}[h]
 			\includegraphics[width=1\textwidth]{staendevagor.eps}
-			\captiona{De 6 första egensvängingarna som stående vågor, för 20 till 24 partiklar.
-			X axeln är index för partiklarna, ordnade efter avstånd från en av väggarna. y-axeln
+			\vspace{-36pt}
+			\captiona{De 6 första egensvängingarna som stående vågor. y-axeln
 			för de respektive plottarna motsvarar partiklarnas avvikelse från jämnviktslägget,
-			dess amplitud. Amplituden är normaliserad så att maximala amplituden för en partikel
-			för lägsta egensvängingen har en amplitud 1. Negativ respektive positiv amplitud motsvarar
-			att partiklarna svänger i motsatt riktning. Linjer är dragna mellan partiklarnas amplituder
-			för att illustrera vågegenskapen hos svängingen.}
+			dess amplitud.}
 			\label{stavag}
 		\end{figure}
 		
@@ -359,14 +357,11 @@
 		
 		%bilder ska fixas, 10 till 20 partiklar verkar lämpligt, över 20 lär vara för svårtyt.
 		
-		\begin{figure}
+		\begin{figure}[h]
 			\includegraphics[width=1\textwidth]{egenfrekvenser.eps}
+			\vspace{-36pt}
 			\captiona{Egenfrekvenser för de 6 första egensväningarna vid 20 till 24 partiklar
-			illustrerade som sinusvågor. Tidsenheten på x-axeln, $\frac{2\pi}{\omega_o}$,
-			innebär att en periodtid på 1 motsvarar periodtiden för en enda partikel i en
-			odämpad fjäder. Olika färger motsvarar olika egensvängingar i ordningen blå, röd,
-			grön, svart, gul, och magneta där blå är för den lägsta och magneta är för den sjätte lägsta.}
-			%'b','r','g','k','c','y','m'
+			illustrerade som sinusvågor.}
 			\label{egenf}
 		\end{figure}
 		
@@ -416,11 +411,17 @@
 			C_i = \frac{\pm \dot{x}_i}{\sqrt{\lambda_i} \omega_o}
 		\end{equation*}
 		
-		\begin{figure}
+		\begin{figure}[h]
 			\includegraphics[width=1\textwidth]{oscillations-over-time.eps}
 			\captiona{Amplitud för avvikelse hos respektive partiklar över tid, för 100 partiklar och en
 			begynnelsehastighet $0.1 \, \mathrm{le} \cdot \omega_o$ för de mittersta 10 procenten av partiklarna.}
 			\label{oscot}
+		\end{figure}
+		
+		\begin{figure}[h]
+			\includegraphics[width=1\textwidth]{vaagformer.eps}
+			\captiona{Olika egensvängningar och deras respektive amplitud för $N=100$}
+			\label{waves}
 		\end{figure}
 	
 	\clearpage
