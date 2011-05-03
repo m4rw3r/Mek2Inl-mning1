@@ -548,7 +548,7 @@
 		tiden $t$ skrivas som:
 		
 		\begin{equation*}
-			Q(t) = A \left[ \mathbf{C} \odot \sin(\omega_o t \sqrt{\boldsymbol{\lambda}} + \mathbf{\Phi} \right]
+			Q(t) = A \left[ \mathbf{C} \odot \sin(\omega_o t \sqrt{\boldsymbol{\lambda}} + \mathbf{\Phi} )\right]
 		\end{equation*}
 		
 		där $\mathbf{C}$ och $\mathbf{\Phi}$ är vektorer med konstanter som ges av begynnelsevilkor,
@@ -638,6 +638,8 @@
 			\item Fjädrarna bevarar sin jämnvikts-längd under töjning.
 			\item Alla fjädrar är linjära med fjäderkonstant $k$, deras vikt försummas.
 			\item Alla partiklar räknas som punktmassor och har samma massan $m$.
+			\item Observatören befinner sig i ett inertialsystem.
+			\item För väggarna gäller att $q_0 = q_{N+1} = 0$, ty deras position är fix relativt observatören.
 			\item $Q(t)=\begin{bmatrix}q_1 \\ \vdots \\ q_j \\ \vdots \\ q_N \end{bmatrix}$ där $q_j$ är
 			      partikeln $j$'s avvikelse från sitt jämnviktsläge.
 			\item Varje partikel är ansluten till två fjädrar som påverkar partikeln
@@ -699,37 +701,7 @@
 			-1 & 2
 		\end{bmatrix}$ är vår sökta matris $K$ enligt \ref{sats}.
 		
-	\subsubsection*{$N = 3$:}
-		
-		Enligt friläggning:
-		
-		\begin{equation*}
-			\left\{ \,
-			\begin{IEEEeqnarraybox}[\IEEEeqnarraystrutmode][c]{rCl}
-				\ddot{q_1} & = & -\frac{k q_1}{m} + \frac{k (q_2 - q_1)}{m} \\
-				\ddot{q_2} & = & -\frac{k (q_2 - q_1)}{m} + \frac{k (q_3 - q_2)}{m} \\
-				\ddot{q_3} & = & -\frac{k q_3}{m} + \frac{k (q_3 - q_2)}{m}
-			\end{IEEEeqnarraybox}
-			\right.
-			\hspace{12pt}
-			\Leftrightarrow
-			\hspace{12pt}
-			\ddot{Q} + \omega_o^2 \begin{bmatrix}
-				2 & -1 & 0 \\
-				-1 & 2 & -1 \\
-				0 & -1 &2
-			\end{bmatrix} Q = 0
-		\end{equation*}
-		
-		Där då $\begin{bmatrix}
-			2 & -1 & 0 \\
-			-1 & 2 & -1 \\
-			0 & -1 &2
-		\end{bmatrix}$ är vår sökta matris $K$ enligt \ref{sats}.
-	
-	\newpage
-	
-	\subsubsection*{$N = \{x: x \in \N \land x > 3\}$:}
+	\subsubsection*{$N = \{x: x \in \N \land x > 2\}$:}
 		
 		Antag att för $N - 2$:
 		
@@ -778,7 +750,7 @@
 			\end{bmatrix} Q = 0
 		\end{equation*}
 		
-		Där då vårt sökta $K$ från \ref{sats} är en tridiagonal matris med värdena $-1$, $2$ $-1$. \hfill $\square$
+		där då vårt sökta $K$ från \ref{sats} är en tridiagonal matris med värdena $-1$, $2$ $-1$. \hfill $\square$
 		
 	\end{appendix}
 \end{document}
