@@ -442,7 +442,7 @@
 		\hspace{12pt}
 		\begin{cases}
 			\omega_1 = 0 \\
-			\omega_2 = \sqrt{2}\omega_o \\
+			\omega_2 = \omega_o \\
 			\omega_3 = \sqrt{1 + 2 \Delta_M}\omega_o
 		\end{cases}
 	\end{IEEEeqnarray*}
@@ -488,12 +488,12 @@
 				1\\
 				0\\
 				-1
-			\end{bmatrix}\sin(\sqrt{2}\omega_o t + \Phi_2) \\
+			\end{bmatrix}\sin(\omega_o t + \Phi_2) \\
 			&+& \frac{c_3}{\sqrt{2 + 4 \Delta_M^2}}\begin{bmatrix}
 				1 \\
 				-2 \Delta_M \\
 				1
-			\end{bmatrix}\sin\big(\sqrt{1+2 \Delta_M}\omega_o t + \Phi_3 \big)
+			\end{bmatrix}\sin\big(\sqrt{1 + 2 \Delta_M}\omega_o t + \Phi_3 \big)
 	\end{IEEEeqnarray*}
 	
 	\begin{IEEEeqnarray*}{c}
@@ -519,17 +519,17 @@
 		\begin{IEEEeqnarray*}{C}
 			\begin{cases}
 				\omega_1 = 0 \\
-				\omega_2 = \sqrt{2} \omega_o \\
+				\omega_2 = \omega_o \\
 				\omega_3 = \sqrt{1+8/3} \omega_o
 			\end{cases}
 		\end{IEEEeqnarray*}
 		
-		Vilket ger kvoten för egensväningarna: $\frac{\omega_3}{\omega_2} =\sqrt{\frac{11}{6}}=1.3540$.
+		Vilket ger kvoten för egensväningarna: $\frac{\omega_3}{\omega_2} =\sqrt{\frac{11}{3}} = 1.9148$.
 		
 		Kvoten för de givna energinivåerna: $\frac{E_2}{E_1} = \frac{2349}{1388} = 1.6924$.
 		
 		För att ta ställning till hur bra approximationen är betraktar vi det relativa felet
-		$|\frac{E_2}{E_1}-\frac{\omega_3}{\omega_2}|/|\frac{E_2}{E_1}| = 0.19993$,
+		$|\frac{E_2}{E_1}-\frac{\omega_3}{\omega_2}|/|\frac{E_2}{E_1}| = 0.13144$,
 		vilket motsvarar en relativt god approximation i någon menning.
 
 \section{Uppgift 3}
@@ -610,7 +610,7 @@
 		\end{equation*}
 		
 		där $\mathbf{C}$ och $\mathbf{\Phi}$ är vektorer med konstanter som ges av begynnelsevilkor,
-		$\odot$ syftar på elementvis multiplikation.
+		$\odot$ syftar på elementvis multiplikation (Hadamard-produkten).
 		
 		Med begynnelsevilkoren: 
 		
