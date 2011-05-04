@@ -41,35 +41,24 @@ function uppg3a()
 	
 	hold on;
 	
-	first = 1;
-	last  = num_plotted;
+	xlabel('Antal partiklar', 'interpreter', 'latex');
+    ylabel('Index f\"{o} egensv\"{a}ning','interpreter','latex');
+	zlabel('$\frac{\omega}{\omega_o}$' ,'interpreter','latex');
+	title(['egenfrekvenser f\"{o}r antal partiklar 1 till ', num2str(N)], 'interpreter','latex');
 	
-	xlabel('tid, $\frac{2\pi}{\omega_o}$', 'interpreter', 'latex');
-	ylabel('index f\"{o}r egenfrekvens samt normaliserad amplitud' ,'interpreter','latex');
-	title(['egenfrekvenser ', num2str(first), ' till ', num2str(last) ,' f\"{o}r antal partiklar ', num2str(s), ' till ', num2str(N), ' i olika f\"{a}rger'], 'interpreter','latex');
-	
-	% to plot differenet frequencies with different colors.
-	colors = ['b', 'r', 'g', 'k', 'c', 'y', 'm'];
 	
 	% plots eigen oscillations
-	for num_particles = s:N
-		% to plot different numbers of particles in different subplots
-		subplot(N - s + 1, 1, num_particles + 1 - s)
-		ylabel([num2str(num_particles), ' par.']);
-		hold on
-		
-		for i = first:last
-			colorindex = mod(i - last, length(colors)) + 1;
-			
-			% sets ticks 
-			set(gca, 'XTick', 0:10)
-			[t, y] = calcFrequencies(num_particles, i);
-			plot(t, y, colors(colorindex));
+	for num_particles = 1:N
+		% plot \omega/\omega_o for different numbers of particles
+		for i = 1:num_particles
+            % sets ticks 
+			set(gca, 'XTick', 1:N)
+            set(gca, 'YTick', 1:N)
+			this_frequence = calcFrequencies(num_particles, i);
+			plot3(num_particles,i, this_frequence, '*');
 		end
 	end
-	
-	% sets common xlabel
-	 xlabel('$\frac{2\pi}{\omega_o}$', 'interpreter','latex');
+
 	
 function [t, y] = calcStandingWaves(num_particles)
 	A = triDiag(num_particles);
@@ -94,10 +83,9 @@ function [m] = triDiag(side_length)
 	A = diag(n);
 	m = A + B + C;
 	
-function [t, y] = calcFrequencies(num_particles, vector_index)
+function [frequence] = calcFrequencies(num_particles, vector_index)
+    %returns sqrt of specified eigenvalue: \omega/\omega_o
 	K     = triDiag(num_particles);
 	[P D] = eig(K);
 	% 2*pi to plot in unit t = omega_o / (2 * pi)
-	freq  = sqrt(D(vector_index, vector_index)) * 2 * pi;
-	t     = linspace(0, 10);
-	y     = sin(freq .* t);
+	frequence  = sqrt(D(vector_index, vector_index));
