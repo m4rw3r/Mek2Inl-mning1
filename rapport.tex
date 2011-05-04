@@ -395,9 +395,9 @@
 		begynnelsehastighet, så får vi ekvationssystemet:
 		
 		\begin{IEEEeqnarray}{rCl}
-			A\mathbf{x}       & = & \mathbf{0}\\
+			\hat{A}\mathbf{x}       & = & \mathbf{0}\\
 			\mathbf{x}        & = & \mathbf{C} \odot \sin(\mathbf{\Phi})\\
-			A\dot{\mathbf{x}} & = & \mathbf{v}\\
+			\hat{A}\dot{\mathbf{x}} & = & \mathbf{v}\\
 			\dot{\mathbf{x}}  & = & \omega_0 \mathbf{C} \odot \sqrt{\boldsymbol{\lambda}} \odot \cos(\mathbf{\Phi})
 		\end{IEEEeqnarray}
 		
@@ -476,12 +476,10 @@
 			\item Alla partiklar räknas som punktmassor och har samma massan $m$.
 			\item Observatören befinner sig i ett inertialsystem.
 			\item För väggarna gäller att $q_0 = q_{N+1} = 0$, ty deras position är fix relativt observatören.
-			\item $Q(t)=\begin{bmatrix}q_1 \\ \vdots \\ q_j \\ \vdots \\ q_N \end{bmatrix}$ där $q_j$ är
+			\item $Q: \R \rightarrow \R^N,\, Q \in \mathcal{C}^2,\,Q(t) = \begin{bmatrix}q_1(t) \\ \vdots \\ q_j(t) \\ \vdots \\ q_N(t) \end{bmatrix}$ där $q_j$ är
 			      partikeln $j$'s avvikelse från sitt jämnviktsläge.
 			\item Varje partikel är ansluten till två fjädrar som påverkar partikeln
-			      med $F_j = -k q_j$, $k = z\frac{\mathrm{Kraftenhet}}{\mathrm{Massenhet}}$, $z\in \R^{+}$
-			      var.
-			\item $\omega_o = \sqrt{\frac{k}{m}}$ där $k$ är fjäderkonstanten och $m$ är en partikels massa.
+			      med $F = -k \Delta x$, där $\Delta x$ är fjäderns utsträckning från sin jämnviktslängd.
 		\end{itemize}
 	
 	
@@ -492,10 +490,10 @@
 		på formen:
 		
 		\begin{equation*}
-			\ddot{Q}(t) + \omega_{o}^{2} K Q = 0
+			\ddot{Q} + \omega_{o}^{2} K Q = 0
 		\end{equation*}
 		
-		Där $K$ är en tri-diagonal matris med värdena $-1$, $2$, $-1$ och $\omega_o = \sqrt{\frac{k}{m}}$
+		Där $K$ är en tri-diagonal matris med värdena $-1$, $2$, $-1$ och $\omega_o = \sqrt{\frac{k}{m}}$.
 		
 	\newpage
 	
@@ -504,12 +502,12 @@
 		
 		Enligt friläggning:
 		
-		\begin{equation}
+		\begin{equation*}
 			\ddot{q_1} = \frac{-2 k q_1}{m} \hspace{12pt} \Leftrightarrow \hspace{12pt} \ddot{Q} + \omega_o^2 \begin{bmatrix}2\end{bmatrix} Q = 0
 			\label{N=1}
-		\end{equation}
+		\end{equation*}
 		
-		Där då $\begin{bmatrix}2\end{bmatrix}$ är vår sökta matris enligt \ref{sats}.
+		Där då $\begin{bmatrix}2\end{bmatrix}$ är vår sökta matris $K$ enligt \ref{sats}.
 		
 	\subsubsection*{$N=2$:}
 		
@@ -549,16 +547,16 @@
 		För partikel $N$ gäller:
 		
 		\begin{equation}
-			q_N = -\frac{k q_N}{m} + \frac{k (q_N - q_{N-1})}{m}
+			q_N = -\frac{k q_N}{m} + \frac{k (q_{N-1} - q_N)}{m}
 			\label{N=x N}
 		\end{equation}
 		
 		Enligt Newton III så påverkas partikel $N - 1$ med en kraft som är lika stor
-		som $k(q_{N-1} - q_{N-2}) - k (q_{N-1} - q_N))$ (följer från \ref{N=x 1} och \ref{N=x N})
+		som $k(q_{N-1} - q_{N-2}) + k (q_{N-1} - q_N)$ (följer från \ref{N=x 1} och \ref{N=x N})
 		men motriktad:
 		
 		\begin{equation}
-			q_{N-1} = -\frac{k(q_{N-1}-q_{N-2})}{m} + \frac{k(q_{N-1}-q_N)}{m}
+			q_{N-1} = -\frac{k(q_{N-1}-q_{N-2})}{m} + \frac{k (q_N - q_{N-1})}{m}
 		\end{equation}
 		
 		Ur detta följer att:
@@ -586,7 +584,9 @@
 			\end{bmatrix} Q = 0
 		\end{equation*}
 		
-		där då vårt sökta $K$ från \ref{sats} är en tridiagonal matris med värdena $-1$, $2$ $-1$. \hfill $\square$
+		där då vårt sökta $K$ från \ref{sats} är en tridiagonal matris med värdena $-1$, $2$, $-1$.
+		
+		Enligt Induktionsaxiomet stämmer då \ref{sats} för alla $N \geq 1$ \hfill $\square$
 		
 	\end{appendix}
 \end{document}
