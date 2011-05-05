@@ -252,7 +252,7 @@
 		\ddot{Q}+\omega_o^2KQ=0
 	\end{IEEEeqnarray*}
 	
-	Egenvärdesproblem med karakteristiskt polynom:
+	Egenvärdesproblem ger lösning för $\omega_i$ från ansättning $Q = Ae^{\iu \omega t}$:
 	
 	\begin{equation*}
 		\omega_1 = 0 \hspace{12pt} \omega_2 = \omega_o \hspace{12pt} \omega_3 = \sqrt{1 + 2 \mu}\omega_o
@@ -360,10 +360,10 @@
 		\begin{figure}[h]
 			\includegraphics[width=1\textwidth]{egenfrekvenser.eps}
 			\vspace{-28pt}
-			\captiona{Egenfrekvenser uttryckta i \frac{1}{\omega_o}.}
+			\captiona{Egenfrekvenser uttryckta i $\frac{1}{\omega_o}$.}
 			\label{egenf}
 		\end{figure}
-		
+	
 \section{Uppgift 4}
 	
 	\setcounter{equation}{0}
@@ -385,26 +385,24 @@
 		
 		Med begynnelsevilkoren: 
 		
-		\begin{IEEEeqnarray*}{C}
-			Q(0) = \mathbf{0} \\
-			\dot{Q}(0) = \mathbf{v}
-		\end{IEEEeqnarray*}
+		\begin{equation*}
+			Q(0) = \mathbf{0} \hspace{36pt} \dot{Q}(0) = \mathbf{v}
+		\end{equation*}
 		
 		Där $\mathbf{v}$ är en vektor för vilkoret att de mittersta $10\%$ av partiklarna ges en liten
 		begynnelsehastighet, så får vi ekvationssystemet:
 		
-		\begin{IEEEeqnarray}{rCl}
-			\hat{A}\mathbf{x}       & = & \mathbf{0}\\
-			\mathbf{x}        & = & \mathbf{C} \odot \sin(\mathbf{\Phi})\\
-			\hat{A}\dot{\mathbf{x}} & = & \mathbf{v}\\
+		\begin{IEEEeqnarray}{rClCrCl}
+			\hat{A}\mathbf{x}       & = & \mathbf{0} & \hspace{24pt} & \mathbf{x}        & = & \mathbf{C} \odot \sin(\mathbf{\Phi})\\
+			\hat{A}\dot{\mathbf{x}} & = & \mathbf{v} & \hspace{24pt} &
 			\dot{\mathbf{x}}  & = & \omega_0 \mathbf{C} \odot \sqrt{\boldsymbol{\lambda}} \odot \cos(\mathbf{\Phi})
 		\end{IEEEeqnarray}
 		
 		Då A:s kolonner är ortonormerade egenvektorer till en symmetrisk matris följer att
-		$A \mathbf{x} = \mathbf{0}$ endast har trivial lösning, alltså fås ur (1) och (2) att antingen
+		$A \mathbf{x} = \mathbf{0}$ endast har trivial lösning, alltså fås ur (1) att antingen
 		$\mathbf{C} = \mathbf{0}$ eller $\sin(\mathbf{\Phi}) = \mathbf{0}$. $\mathbf{C} = \mathbf{0}$ ger
-		ingen lösning för (3) och (4), varpå vi får att $\sin(\mathbf{\Phi}) = \mathbf{0}$, vilket ger
-		att $\mathbf{\Phi} = n \pi, \,\, n \in \mathbb{N}^{\ast}$. (3) och (4) ger oss då att:
+		ingen lösning för (2), varpå vi får att $\sin(\mathbf{\Phi}) = \mathbf{0}$, vilket ger
+		att $\Phi_i = n \pi, \,\, n \in \mathbb{N}^{\ast}$. (2) ger oss då att:
 		
 		\begin{equation*}
 			C_i = \frac{\pm \dot{x}_i}{\sqrt{\lambda_i} \omega_o}
@@ -451,6 +449,8 @@
 			\begin{framed}
 				\lstinputlisting[]{uppg3.m}
 			\end{framed}
+		
+		\newpage
 		
 		\section{Programkod för Uppgift 4}
 			
