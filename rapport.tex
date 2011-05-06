@@ -64,44 +64,46 @@
 	
 	\begin{figure}[h]
 		\setlength{\unitlength}{1mm}
-		\begin{picture} (120, 40)
-			\put(25, 20){\circle{20}}
-			\put(57, 20){\circle{20}}
-			\put(89, 20){\circle{20}}
-			
-			\put(18, 20){\vector(-1,0){8}}
-			
-			\put(32, 20){\vector(1,0){8}}
-			
-			\put(50, 20){\vector(-1,0){8}}
-			
-			\put(64, 20){\vector(1,0){8}}
-			
-			\put(82, 20){\vector(-1,0){8}}
-			
-			\put(96, 20){\vector(1,0){8}}
-			
-			\put(23, 19){$m$}
-			\put(55, 19){$m$}
-			\put(87, 19){$m$}
-			
-			\put(10, 22){$kq_1$}
-			\put(32.5, 22){$k(q_2-q_1)$}
-			\put(64.5, 22){$k(q_3-q_2)$}
-			\put(98, 22){$-k(q_3)$}
-			
-			\put(25, 30){\line(0,1){2}}
-			\put(57, 30){\line(0,1){2}}
-			\put(89, 30){\line(0,1){2}}
-			
-			\put(25, 31){\vector(1,0){8}}
-			\put(57, 31){\vector(1,0){8}}
-			\put(89, 31){\vector(1,0){8}}
-			
-			\put(27, 33){$q_1$}
-			\put(59, 33){$q_2$}
-			\put(91, 33){$q_3$}
-		\end{picture}
+		\begin{center}
+			\begin{picture} (110, 40)
+				\put(25, 20){\circle{20}}
+				\put(57, 20){\circle{20}}
+				\put(89, 20){\circle{20}}
+				
+				\put(18, 20){\vector(-1,0){8}}
+				
+				\put(40, 20){\vector(-1,0){8}}
+				
+				\put(42, 20){\vector(1,0){8}}
+				
+				\put(72, 20){\vector(-1,0){8}}
+				
+				\put(74, 20){\vector(1,0){8}}
+				
+				\put(104, 20){\vector(-1,0){8}}
+				
+				\put(23, 19){$m$}
+				\put(55, 19){$m$}
+				\put(87, 19){$m$}
+				
+				\put(10, 22){$kq_1$}
+				\put(32.5, 22){$k(q_1-q_2)$}
+				\put(64.5, 22){$k(q_2-q_3)$}
+				\put(98, 22){$kq_3$}
+				
+				\put(25, 30){\line(0,1){2}}
+				\put(57, 30){\line(0,1){2}}
+				\put(89, 30){\line(0,1){2}}
+				
+				\put(25, 31){\vector(1,0){8}}
+				\put(57, 31){\vector(1,0){8}}
+				\put(89, 31){\vector(1,0){8}}
+				
+				\put(27, 33){$q_1$}
+				\put(59, 33){$q_2$}
+				\put(91, 33){$q_3$}
+			\end{picture}
+		\end{center}
 		\vspace{-48pt}
 		\captiona{Friläggning för Problem 1 \label{problem 1}}
 	\end{figure}
@@ -185,20 +187,20 @@
 			\put(57, 20){\circle{20}}
 			\put(89, 20){\circle{20}}
 			
-			\put(32, 20){\vector(1,0){8}}
+			\put(40, 20){\vector(-1,0){8}}
 			
-			\put(50, 20){\vector(-1,0){8}}
+			\put(42, 20){\vector(1,0){8}}
 			
-			\put(64, 20){\vector(1,0){8}}
+			\put(72, 20){\vector(-1,0){8}}
 			
-			\put(82, 20){\vector(-1,0){8}}
+			\put(74, 20){\vector(1,0){8}}
 			
 			\put(23, 19){$m$}
 			\put(55, 19){$M$}
 			\put(87, 19){$m$}
 			
-			\put(32.5, 22){$k(q_2-q_1)$}
-			\put(64.5, 22){$k(q_3-q_2)$}
+			\put(32.5, 22){$k(q_1-q_2)$}
+			\put(64.5, 22){$k(q_2-q_3)$}
 			
 			\put(25, 30){\line(0,1){2}}
 			\put(57, 30){\line(0,1){2}}
@@ -498,7 +500,7 @@
 			\item $\mathbf{Q}: \R \rightarrow \R^N,\, \mathbf{Q} \in \mathcal{C}^2,\,\mathbf{Q}(t) = \begin{bmatrix}q_1(t) \\ \vdots \\ q_j(t) \\ \vdots \\ q_N(t) \end{bmatrix}$ där $q_j$ är
 			      partikeln $j$'s avvikelse från sitt jämnviktsläge.
 			\item Varje partikel är ansluten till två fjädrar som påverkar partikeln
-			      med $F = -k \Delta x$, där $\Delta x$ är fjäderns utsträckning från sin jämnviktslängd.
+			      med $F = -k \Delta x$ var, där $\Delta x$ är fjäderns utsträckning från sin jämnviktslängd.
 		\end{itemize}
 	
 	
@@ -519,8 +521,34 @@
 	\subsection{Bevis}
 		
 	\subsubsection*{$N=1$:}
+	
+		\begin{figure}[h]
+			\setlength{\unitlength}{1mm}
+			\begin{center}
+				\begin{picture} (40, 40)
+					\put(27, 20){\circle{20}}
+					
+					\put(20, 20){\vector(-1,0){8}}
+					
+					\put(42, 20){\vector(-1,0){8}}
+					
+					\put(25, 19){$m$}
+					
+					\put(13.5, 22){$kq_1$}
+					\put(34.5, 22){$kq_1$}
+					
+					\put(27, 30){\line(0,1){2}}
+					
+					\put(27, 31){\vector(1,0){8}}
+					
+					\put(29, 33){$q_1$}
+				\end{picture}
+			\end{center}
+			\vspace{-48pt}
+			\captiona{Friläggning för $N=1$ \label{N=1 frilaggning}}
+		\end{figure}
 		
-		Enligt friläggning:
+		Enligt friläggning i figur \ref{N=1 frilaggning}:
 		
 		\begin{equation*}
 			\ddot{q_1} = \frac{-2 k q_1}{m} \hspace{12pt} \Leftrightarrow \hspace{12pt} \mathbf{\ddot{Q}} + \omega_o^2 \begin{bmatrix}2\end{bmatrix} \mathbf{Q} = 0
@@ -531,13 +559,49 @@
 		
 	\subsubsection*{$N=2$:}
 		
-		Enligt friläggning:
+		\begin{figure}[h]
+			\setlength{\unitlength}{1mm}
+			\begin{center}
+				\begin{picture} (70, 40)
+					\put(25, 20){\circle{20}}
+					\put(57, 20){\circle{20}}
+					
+					\put(18, 20){\vector(-1,0){8}}
+					
+					\put(40, 20){\vector(-1,0){8}}
+					
+					\put(42, 20){\vector(1,0){8}}
+					
+					\put(72, 20){\vector(-1,0){8}}
+					
+					\put(23, 19){$m$}
+					\put(55, 19){$m$}
+					
+					\put(11, 22){$kq_1$}
+					\put(32.5, 22){$k(q_1-q_2)$}
+					\put(64.5, 22){$kq_2$}
+					
+					\put(25, 30){\line(0,1){2}}
+					\put(57, 30){\line(0,1){2}}
+					
+					\put(25, 31){\vector(1,0){8}}
+					\put(57, 31){\vector(1,0){8}}
+					
+					\put(27, 33){$q_1$}
+					\put(59, 33){$q_2$}
+				\end{picture}
+			\end{center}
+			\vspace{-48pt}
+			\captiona{Friläggning för $N=2$ \label{N=2 frilaggning}}
+		\end{figure}
+		
+		Enligt friläggning i figur \ref{N=2 frilaggning}:
 		
 		\begin{equation*}
 			\left\{ \,
 			\begin{IEEEeqnarraybox}[\IEEEeqnarraystrutmode][c]{rCl}
 				\ddot{q_1} & = & -\frac{k q_1}{m} - \frac{k(q_1-q_2)}{m} \\
-				\ddot{q_2} & = & -\frac{k q_2}{m} - \frac{k(q_2-q_1)}{m}
+				\ddot{q_2} & = &  \frac{k(q_1-q_2)}{m} -\frac{k q_2}{m}
 			\end{IEEEeqnarraybox}
 			\right.
 			\hspace{12pt}
@@ -557,26 +621,63 @@
 		
 	\subsubsection*{$N = \{x: x \in \N \land x > 2\}$:}
 		
+		\begin{figure}[h]
+			\setlength{\unitlength}{1mm}
+			\begin{center}
+				\begin{picture} (70, 40)
+					\put(19, 20){\circle{20}}
+					\put(57, 20){\circle{20}}
+					
+					\multiput(11, 20)(-2, 0){5}
+						{\line(1, 0){1}}
+					
+					\put(34, 20){\vector(-1,0){8}}
+					
+					\put(42, 20){\vector(1,0){8}}
+					
+					\put(72, 20){\vector(-1,0){8}}
+					
+					\put(17, 19){$m$}
+					\put(55, 19){$m$}
+					
+					\put(26.5, 22){$k(q_{N-1}-q_{N})$}
+					\put(64.5, 22){$kq_{N}$}
+					
+					\put(19, 30){\line(0,1){2}}
+					\put(57, 30){\line(0,1){2}}
+					
+					\put(19, 31){\vector(1,0){8}}
+					\put(57, 31){\vector(1,0){8}}
+					
+					\put(21, 33){$q_{N-1}$}
+					\put(59, 33){$q_N$}
+				\end{picture}
+			\end{center}
+			\vspace{-48pt}
+			\captiona{Friläggning för $q=N$ \label{q=N frilaggning}}
+		\end{figure}
+		
 		Antag att för $N - 2$:
 		
 		\begin{equation}
-			q_{N-2} = -\frac{k (q_{N-2} - q_{N-3})}{m} + \frac{k(q_{N-1}-q_{N-2})}{m}
+			q_{N-2} = \frac{k (q_{N-3} - q_{N-2})}{m} - \frac{k(q_{N-2}-q_{N-1})}{m}
 			\label{N=x 1}
 		\end{equation}
 		
-		För partikel $N$ gäller, vilket fås från friläggning av den enskilda partikeln $N$:
+		För partikel $N$ gäller, vilket fås från friläggning av den enskilda partikeln $N$
+		i figur \ref{q=N frilaggning}:
 		
 		\begin{equation}
-			q_N = -\frac{k q_N}{m} + \frac{k (q_{N-1} - q_N)}{m}
+			q_N = \frac{k (q_{N-1} - q_N)}{m} -\frac{k q_N}{m}
 			\label{N=x N}
 		\end{equation}
 		
-		Enligt Newton III så påverkas partikel $N - 1$ med en kraft som är lika stor
-		som $k(q_{N-1} - q_{N-2}) + k (q_{N-1} - q_N)$ (följer från \ref{N=x 1} och \ref{N=x N})
+		Enligt Newton III så påverkas partikel $N - 1$ med de två krafterna $-k(q_{N-2}-q_{N-1})$
+		och $k (q_{N-1} - q_N)$ (följer från \ref{N=x 1} och \ref{N=x N})
 		men motriktad:
 		
 		\begin{equation}
-			q_{N-1} = -\frac{k(q_{N-1}-q_{N-2})}{m} + \frac{k (q_N - q_{N-1})}{m}
+			q_{N-1} = \frac{k(q_{N-2}-q_{N-1})}{m} - \frac{k (q_{N-1} - q_N)}{m}
 		\end{equation}
 		
 		Vilket motsvarar vårt induktionsantagande \eqref{N=x 1}, men för $N-1$ istället för $N-2$.
@@ -585,13 +686,15 @@
 		
 		\begin{equation*}
 			\begin{cases}
-				q_1 = -\frac{k q_1}{m} + \frac{k(q_2 - q_1)}{m} \\
+				\ddot{q}_1 = -\frac{k q_1}{m} - \frac{k(q_1 - q_2)}{m} \\
 				\hspace{64pt} \vdots \\
-				q_j = -\frac{k (q_j - q_{j-1})}{m} + \frac{k(q_{j+1}-q_j)}{m} \\
+				\ddot{q}_j = \frac{k (q_{j-1} - q_j)}{m} - \frac{k(q_j-q_{j+1})}{m} \\
 				\hspace{64pt} \vdots \\
-				q_N = -\frac{k q_N}{m} + \frac{k (q_N - q_{N-1})}{m}
+				\ddot{q}_N = \frac{k (q_{N-1} - q_N)}{m}-\frac{k q_N}{m}
 			\end{cases}
 		\end{equation*}
+		
+		\newpage
 		
 		Vilket motsvarar:
 		
