@@ -60,6 +60,8 @@
 	
 \section{Problem 1}
 	
+	\vspace{-24pt}
+	
 	\begin{figure}[h]
 		\setlength{\unitlength}{1mm}
 		\begin{picture} (120, 40)
@@ -105,7 +107,9 @@
 	\end{figure}
 
 	Ur friläggning (Figur \ref{problem 1}) av de enskilda partiklarna finner vi att:
-
+	
+	\vspace{-12pt}
+	
 	\begin{IEEEeqnarray*}{rCl}
 		m \ddot{q_1} & = & k (q_2 - q_1) - kq_1 \\
 		m \ddot{q_2} & = & k (q_3 - q_2) - k (q_2 - q_1) \\
@@ -113,6 +117,8 @@
 	\end{IEEEeqnarray*}
 	
 	Vi inför beteckningarna: 
+	
+	\vspace{-12pt}
 	
 	\begin{IEEEeqnarray*}{rClCrClCrCl}
 		\omega_o & = & \sqrt{k/m} &\hspace{12pt} &
@@ -133,7 +139,9 @@
 	Vårt system av differentialekvationer kan nu skrivas som:
 
 	\begin{equation*}
-		\mathbf{\ddot{Q}} + \omega_o^2 K \mathbf{Q} = 0
+		\mathbf{\ddot{Q}} + \omega_o^2 K \mathbf{Q} = \mathbf{0} \hspace{24pt}
+		\mathbf{Q} = \mathbf{A} e^{\iu \omega t} \hspace{12pt} \Rightarrow \hspace{12pt} 
+		K \mathbf{A} = \frac{\omega^2}{\omega_o^2} \mathbf{A}
 	\end{equation*}
 	
 	Från detta finner vi att egenvärdena är:
@@ -145,13 +153,13 @@
 	Genom att betrakta $(K-\frac{\omega_i^2}{\omega_o^2}I) \mathbf{A}_i = 0$ för $i=1,2,3$, där $I$ är identitetsmatrisen, finner vi egenvektorerna.
 	
 %Då vi har 3 distinkta egenvärden vet vi att våra 3 egenvektorer är ortogonala, och då vi har 3 ortogonala vektorer har vi en bas för R^3, varpå godt. amplituder för systemet, uttryckta som vektorer i R^3, kan uttryckas som en linjär kombination av dessa egenvektorer. Detta ges oss en enkel modell över amplitudförändringar över tid för godt. svängingar. (ty matrismultiplikationen blir trivial) //end självförklaring
-	Dessa egenvektorer normeras till en ON-bas för lösningsrummet till differensialekvationen.
-	En egensvängning motsvarar att den mittersta är stila medans de två yttre har motriktad
+	Dessa egenvektorer normeras till en ON-bas för lösningsrummet till differentialekvationen.
+	En egensvängning motsvarar att den mittersta är stilla medan de två yttre har motriktad
 	svängning. En lösning med kortare periodtid motsvarar att den mellersta partikeln svänger
-	motriktat de övrig med en större amplutid. Den sista lösningen med längst periodtid motsvarar
-	att all partiklarna svänger i samma riktning, den mellarsta återigen med högre amplitud.
+	motriktat de övrig med en större amplitud. Den sista lösningen med längst periodtid motsvarar
+	att all partiklarna svänger i samma riktning, den mellersta återigen med högre amplitud.
 	
-	Den allmäna fysikaliska lösningen kan skrivas som en superposition av egenvektorerna:
+	Den allmänna fysikaliska lösningen kan skrivas som en superposition av egenvektorerna:
 	
 	\begin{IEEEeqnarray*}{rCl}
 		\mathbf{Q}(t) & = & \begin{bmatrix}
@@ -249,7 +257,7 @@
 		\end{bmatrix} \\
 		\vspace{6pt}\\
 		\Rightarrow
-		\mathbf{\ddot{Q}} + \omega_o^2 K \mathbf{Q} = 0
+		\mathbf{\ddot{Q}} + \omega_o^2 K \mathbf{Q} = \mathbf{0}
 	\end{IEEEeqnarray*}
 	
 	Egenvärdesproblem ger lösning för $\omega_i$ från ansättning $\mathbf{Q} = \mathbf{A} e^{\iu \omega t}$:
@@ -257,6 +265,8 @@
 	\begin{equation*}
 		\omega_1 = 0 \hspace{12pt} \omega_2 = \omega_o \hspace{12pt} \omega_3 = \sqrt{1 + 2 \mu}\omega_o
 	\end{equation*}
+	
+	\newpage
 	
 	Detta ger egenvektorerna:
 	
@@ -286,7 +296,7 @@
 	helt normal, vilket inses från friläggningen där det inte finns någonting som hindrar enheten
 	som de tre partiklarna utgör att röra sig fritt i rummet.
 	
-	Detta ger lösningen, med $\mathbf{A}_i$ konverterad till ON-bas:
+	Detta ger lösningen, med $\mathbf{A}_i, \, i \in \{1,\,2,\,3\}$ konverterad till ON-bas:
 	
 	\begin{equation*}
 		\mathbf{Q}(t) = 
@@ -310,13 +320,13 @@
 			\omega_1 = 0 \hspace{12pt} \omega_2 = \omega_o \hspace{12pt} \omega_3 = \sqrt{1+8/3} \omega_o
 		\end{equation*}
 		
-		Vilket ger kvoten för egensväningarna: $\frac{\omega_3}{\omega_2} =\sqrt{\frac{11}{3}} = 1.9148$.
+		Vilket ger kvoten för egensvängningarna: $\frac{\omega_3}{\omega_2} =\sqrt{\frac{11}{3}} = 1.9148$.
 		
 		Kvoten för de givna energinivåerna: $\frac{E_2}{E_1} = \frac{2349}{1388} = 1.6924$.
 		
 		För att ta ställning till hur bra approximationen är betraktar vi det relativa felet
 		$|\frac{E_2}{E_1}-\frac{\omega_3}{\omega_2}|/|\frac{E_2}{E_1}| = 0.13144$,
-		vilket motsvarar en relativt god approximation i någon menning.
+		vilket motsvarar en relativt god approximation i någon mening.
 
 \section{Uppgift 3}
 	\subsection{Deluppgift a}
@@ -331,7 +341,7 @@
 		de motsvarande egenvärdena för $i=1,\dots,n$.
 		
 		Detta ger oss enligt ovan egenfrekvenserna $\omega_i=\sqrt{\lambda_i} \omega_o$,
-		med den allmäna fysikaliska lösningen:
+		med den allmänna fysikaliska lösningen:
 		\begin{IEEEeqnarray*}{rCl}
 			\mathbf{Q}(t) & = & \sum c_i \mathbf{u}_i \sin(\omega_i t + \Phi_i)
 		\end{IEEEeqnarray*}
@@ -340,29 +350,21 @@
 		
 	\subsection{Deluppgift b}
 	
-		För att illustrera egensvängingarna som stående vågor så betraktar vi för de olika
-		egensvängingarna partiklarnas amplituder som fås ur egensvängingens egenvektor. Se figur \ref{stavag}.
+		För att illustrera egensvängningarna som stående vågor så betraktar vi för de olika
+		egensvängningarna partiklarnas amplituder som fås ur egensvängningens egenvektor. Se figur \ref{stavag}.
 		%referens till bild
 		
 		\begin{figure}[h]
 			\includegraphics[width=1\textwidth]{staendevagor.eps}
 			\vspace{-36pt}
 			\captiona{De 6 första egensvängingarna som stående vågor. y-axeln
-			för de respektive plottarna motsvarar partiklarnas avvikelse från jämnviktslägget,
+			för de respektive graferna motsvarar partiklarnas avvikelse från jämnviktsläget,
 			dess amplitud.}
 			\label{stavag}
 		\end{figure}
 		
-		För att illustrera egenfrekvenserna så plottar vi sinusvågor med egenfrekvenserna. Se figur \ref{egenf}.
+		Se figur \ref{egenf} för egenfrekvenserna relativt $\omega_o$ för 1 till 24 partiklar.
 		
-		%bilder ska fixas, 10 till 20 partiklar verkar lämpligt, över 20 lär vara för svårtyt.
-		
-		\begin{figure}[h]
-			\includegraphics[width=1\textwidth]{egenfrekvenser.eps}
-			\vspace{-28pt}
-			\captiona{Egenfrekvenser uttryckta i $\frac{1}{\omega_o}$.}
-			\label{egenf}
-		\end{figure}
 	
 \section{Uppgift 4}
 	
@@ -374,18 +376,18 @@
 		matrisen $K$, låt $\boldsymbol{\lambda}$ vara vektorn med motsvarande egenvärden samt att
 		$\omega_o = k / m$ där $k$ är fjäderkonstanten och $m$ är massan hos en partikel.
 		Det följer från \ref{sats} och ansättningen $\mathbf{Q} = \mathbf{A} e^{\iu \omega t}$ att partiklarnas
-		avvikelser från jämntviktsläget vid tiden $t$ kan skrivas som:
+		avvikelser från jämnviktsläget vid tiden $t$ kan skrivas som:
 		
 		\begin{equation*}
 			\mathbf{Q}(t) = \hat{A} \left[ \mathbf{C} \odot \sin(\omega_o t \sqrt{\boldsymbol{\lambda}} + \mathbf{\Phi} )\right]
 		\end{equation*}
 		
-		där $\mathbf{C}$ och $\mathbf{\Phi}$ är vektorer med konstanter som ges av begynnelsevilkor,
+		där $\mathbf{C}$ och $\mathbf{\Phi}$ är vektorer med konstanter som ges av begynnelsevillkor,
 		$\odot$ syftar på elementvis multiplikation.
 		
-		Med begynnelsevilkoren: 
+		Med begynnelsevillkoren: 
 		$\mathbf{Q}(0) = \mathbf{0}, \,\, \mathbf{\dot{Q}}(0) = \mathbf{v}$
-		där $\mathbf{v}$ är en vektor för vilkoret att de mittersta $10\%$ av partiklarna ges en liten
+		där $\mathbf{v}$ är en vektor för villkoret att de mittersta $10\%$ av partiklarna ges en liten
 		begynnelsehastighet, så får vi ekvationssystemet:
 		
 		\begin{IEEEeqnarray}{rClCrCl}
@@ -400,12 +402,33 @@
 		ingen lösning för (2), varpå vi får att $\sin(\mathbf{\Phi}) = \mathbf{0}$, vilket ger
 		att $\Phi_i = n \pi, \,\, n \in \mathbb{N}^{\ast}$. (2) ger oss då att:
 		
+		\vspace{-8pt}
+		
 		\begin{equation*}
 			C_i = \frac{\pm \dot{x}_i}{\sqrt{\lambda_i} \omega_o}
 		\end{equation*}
 		
+		\vspace{-4pt}
+		
+		För en illustration av partiklarnas rörelser, se figur \ref{oscot}
+		
+		Den mest exciterade egensvängningen är också den egensvängningen med lägst frekvens och längsta våglängd
+		(dvs. den första egensvängningen), se figur \ref{waves}. Den näst största är svängning nummer 3 eftersom
+		svängning nummer 2 inte har en topp i mitten (Om exciteringen sker ca $\frac{1}{4}$ in från kanten så
+		kommer nummer 2 att bli mer exciterad).
+		
+		\vspace{-12pt}
+		
+		\begin{figure}[h]
+			\includegraphics[width=1\textwidth]{egenfrekvenser.eps}
+			\vspace{-36pt}
+			\captiona{Egenfrekvenser uttryckta i $\frac{1}{\omega_o}$.}
+			\label{egenf}
+		\end{figure}
+		
 		\begin{figure}[h]
 			\includegraphics[width=1\textwidth]{oscillations-over-time.eps}
+			\vspace{-24pt}
 			\captiona{Amplitud för avvikelse hos respektive partiklar över tid, för 100 partiklar och en
 			begynnelsehastighet $0.1 \, \mathrm{le} \cdot \omega_o$ för de mittersta 10 procenten av partiklarna.}
 			\label{oscot}
@@ -413,6 +436,7 @@
 		
 		\begin{figure}[h]
 			\includegraphics[width=1\textwidth]{vaagformer.eps}
+			\vspace{-36pt}
 			\captiona{Olika egensvängningar och deras respektive amplitud för $N=100$}
 			\label{waves}
 		\end{figure}
@@ -493,6 +517,7 @@
 	\newpage
 	
 	\subsection{Bevis}
+		
 	\subsubsection*{$N=1$:}
 		
 		Enligt friläggning:
@@ -539,7 +564,7 @@
 			\label{N=x 1}
 		\end{equation}
 		
-		För partikel $N$ gäller:
+		För partikel $N$ gäller, vilket fås från friläggning av den enskilda partikeln $N$:
 		
 		\begin{equation}
 			q_N = -\frac{k q_N}{m} + \frac{k (q_{N-1} - q_N)}{m}
@@ -553,6 +578,8 @@
 		\begin{equation}
 			q_{N-1} = -\frac{k(q_{N-1}-q_{N-2})}{m} + \frac{k (q_N - q_{N-1})}{m}
 		\end{equation}
+		
+		Vilket motsvarar vårt induktionsantagande \eqref{N=x 1}, men för $N-1$ istället för $N-2$.
 		
 		Ur detta följer att:
 		
