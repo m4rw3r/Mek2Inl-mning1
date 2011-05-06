@@ -1,4 +1,4 @@
-function apa()
+function uppg4()
 	clf
 	figure(1)
 	clf
@@ -17,17 +17,7 @@ function apa()
 	v(45:55,1) = ones(11,1);
 	v          = 0.1 * v;
 	
-	%__________
-	% Vi har ekvationerna:
-	% P C .* sin(fi) = noll                        (1)
-	% P sqrt(lambda) * omega0 .* C .* cos(Fi) = v  (2)
-	% (1) => sin(fi) = 0 (ty C != 0) => fi = pi*n
-	% (2) ger:
-	% P * C .* cos(Fi) = v ./ (sqrt(lambda) * omega0)
-	% C .* cos(Fi) = P \ (v ./ (sqrt(lambda) * omega0))
-	% Varpå C fås från insättning av Fi, från (1), och Fi fås från C.
-	%___________
-	
+	% Beräkningar nedan:
 	rhs(1:N, 1) = noll;
 	rhs(1:N, 2) = v;
 	
@@ -48,6 +38,7 @@ function apa()
 	num_steps = time * 10;
 	time_step = time / num_steps;
 	
+	% Animera!
 	for t = 0:(num_steps - 1)
 		data(1:N, t + 1) = result(t * time_step + stime);
 		
@@ -57,13 +48,11 @@ function apa()
 		%saveas(h, strcat('plot', sprintf('%d', t), '.png'));
 		pause(0.005);
 	end
-	%}
-	% Få noll vid vägg 2? data(1:101, num_steps + 1) = zeros(101, 1);
 	
 	% Plotta 3d-plot med tiden som y axel vid diskreta tidpunkter
-	%{
 	clf
 	hold on
+	
 	xlabel(['Partikel-index']);
 	ylabel(['$\frac{1}{\omega_o}$'], 'interpreter', 'latex');
 	h_ylabel = get(gca, 'YLabel');
@@ -75,8 +64,8 @@ function apa()
 		plot3(linspace(0, N), t * ett, result(t * time_step + stime));
 		zlim([-1 1]);
 	end
-	%}
 	
+	% Exciterade gensvängningar
 	figure(2)
 	
 	% Force the first eigen-oscillation to be positive,
