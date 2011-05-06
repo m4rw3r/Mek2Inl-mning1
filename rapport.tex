@@ -38,12 +38,25 @@
 
 \title{Analytisk och numerisk undersökning av modell för oscillerande partiklar upphängda i ideala fjädrar i en spatiell dimension}
 	\author{Stefan Buller och Martin Wernstål}
-	\date{TODO: DATE}
+	\date{2011-05-06}
 	\maketitle{}
 	\thispagestyle{empty}
 
 	\begin{abstract}
-		TODO: Sammanfattning
+		System av oscillerande partiklar betraktas analytiskt i en dimension och löses
+		med hjälp av en differentialekvation på matrisform enligt 
+		$\mathbf{\ddot{Q}}+\omega_o^2K\mathbf{Q}=\mathbf{0}$.
+		Denna ekvation löses med hjälp av egenvärden.
+		
+		Två olika typer av problem betraktas, där det system som har partiklar med
+		identiska massor och som sitter fast kan beskrivas med hjälp av en tridiagonal
+		matris med värdena $-1$, $2$, $-1$.
+		Det andra systemet med tre partiklar med två olika massor har bara interna
+		krafter och kan på så sätt röra sig fritt i rummet, och beskrivs med en matris
+		som innehåller kvoter mellan den största partikeln och de två mindre partiklarna.
+		
+		MATLAB användes för att beräkna differentialekvationerna för större system
+		och för att beskriva egenvektorer och egenvärden grafiskt.
 	\end{abstract}
 
 \newpage{}
@@ -113,9 +126,9 @@
 	\vspace{-12pt}
 	
 	\begin{IEEEeqnarray*}{rCl}
-		m \ddot{q_1} & = & k (q_2 - q_1) - kq_1 \\
-		m \ddot{q_2} & = & k (q_3 - q_2) - k (q_2 - q_1) \\
-		m \ddot{q_3} & = & k (q_3 - q_2) - kq_3
+		m \ddot{q_1} & = & - kq_1 - k (q_1 - q_2) \\
+		m \ddot{q_2} & = & k (q_1 - q_2) - k (q_2 - q_3) \\
+		m \ddot{q_3} & = & k (q_2 - q_3) - kq_3
 	\end{IEEEeqnarray*}
 	
 	Vi inför beteckningarna: 
@@ -224,9 +237,9 @@
 	\begin{equation*}
 		\left\{ \,
 		\begin{IEEEeqnarraybox}[\IEEEeqnarraystrutmode][c]{rCl}
-			m \ddot{q_1} & = & k (q_2 - q_1) \\
-			M \ddot{q_2} & = & k (q_3 - q_2) - k (q_2 - q_1) \\
-			m \ddot{q_3} & = & -k (q_3 - q_2)
+			m \ddot{q_1} & = & - k (q_1 - q_2) \\
+			M \ddot{q_2} & = & k (q_1 - q_2) - k (q_2 - q_3) \\
+			m \ddot{q_3} & = & k (q_2 - q_3)
 		\end{IEEEeqnarraybox}
 		\right.
 		\Leftrightarrow
@@ -361,7 +374,8 @@
 			\vspace{-36pt}
 			\captiona{De 6 första egensvängingarna som stående vågor. y-axeln
 			för de respektive graferna motsvarar partiklarnas avvikelse från jämnviktsläget,
-			dess amplitud.}
+			deras relativa amplitud. Relativa amplituden mellan de olika vågorna bestäms med
+			begynnelsevillkor och visas inte här.}
 			\label{stavag}
 		\end{figure}
 		
@@ -665,7 +679,7 @@
 		\end{equation}
 		
 		För partikel $N$ gäller, vilket fås från friläggning av den enskilda partikeln $N$
-		i figur \ref{q=N frilaggning}:
+		i figur \ref{q=N frilaggning}, att:
 		
 		\begin{equation}
 			q_N = \frac{k (q_{N-1} - q_N)}{m} -\frac{k q_N}{m}
