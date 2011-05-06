@@ -42,8 +42,7 @@ function uppg3a()
 	hold on;
 	
 	xlabel('Antal partiklar', 'interpreter', 'latex');
-    ylabel('Index f\"{o} egensv\"{a}ning','interpreter','latex');
-	zlabel('$\frac{\omega}{\omega_o}$' ,'interpreter','latex');
+	ylabel('$\omega$' ,'interpreter','latex');
 	title(['egenfrekvenser f\"{o}r antal partiklar 1 till ', num2str(N)], 'interpreter','latex');
 	
 	
@@ -55,7 +54,7 @@ function uppg3a()
 			set(gca, 'XTick', 1:N)
             set(gca, 'YTick', 1:N)
 			this_frequence = calcFrequencies(num_particles, i);
-			plot3(num_particles,i, this_frequence, '*');
+			plot(num_particles, this_frequence, '*');
 		end
 	end
 
